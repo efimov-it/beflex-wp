@@ -53,23 +53,40 @@
     
     &-franchizeSteps {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scroll-snap-type: x mandatory;
+        width: 100vw;
 
+        scroll-padding-inline: vw(21px, 430px);
+        padding: 0px vw(21px, 430px);
+        transform: translateX(vw(-21px, 430px));
         gap: vw(32px, 430px);
 
         @media screen and (min-width: 526px) {
-            flex-direction: row;
-            flex-wrap: wrap;
-        
+            scroll-padding-inline: vw(21px, 744px);
+            padding: 0px vw(21px, 744px);
+            transform: translateX(vw(-21px, 744px));
             gap: vw(32px, 744px);
         }
         
         @media screen and (min-width: 921px) {
+            width: 100%;
+            padding: 0px;
+            transform: none;
+            overflow-x: visible;
+            flex-wrap: wrap;
+
             gap: vw(32px);
         }
         
         @media screen and (min-width: 1440px) {
             gap: 32px;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
         }
     
         &_step {
@@ -79,8 +96,10 @@
             position: relative;
             overflow: hidden;
             margin: 0px auto;
+            scroll-snap-align: start;
 
             width: vw(236px, 430px);
+            min-width: vw(236px, 430px);
             height: vw(240px, 430px);
             border-radius: vw(24px, 430px);
             gap: vw(12px, 430px);
@@ -88,6 +107,7 @@
 
             @media screen and (min-width: 526px) {
                 width: vw(236px, 744px);
+                min-width: vw(236px, 744px);
                 height: vw(240px, 744px);
                 border-radius: vw(24px, 744px);
                 gap: vw(12px, 744px);
@@ -97,6 +117,7 @@
             @media screen and (min-width: 921px) {
                 margin: 0px;
                 width: vw(236px);
+                min-width: auto;
                 height: vw(240px);
                 border-radius: vw(24px);
                 gap: vw(12px);
