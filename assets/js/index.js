@@ -723,6 +723,41 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
+    // Steps slider
+
+    document.querySelectorAll('.bf-franchizeStepsWrapper')
+            .forEach(stepsSlider => {
+
+                const list = stepsSlider.querySelector('.bf-franchizeSteps');
+                const slides = stepsSlider.querySelectorAll('.bf-franchizeSteps_step');
+
+                list.onscroll = () => {
+                    const scrollLeft = list.scrollLeft;
+    
+                    const currentDot = stepsSlider.querySelector('.bf-classesSliderDot__active');
+    
+                    if (slides.length > 1) {
+                        const slideWidth = slides[0].offsetWidth;
+                        const listPaddingLeft = parseInt(window.getComputedStyle(list, null).getPropertyValue('padding-left'))
+                        const gap = slides[1].offsetLeft - listPaddingLeft - slides[0].offsetWidth;
+    
+                        const nextDotIndex = Math.round(scrollLeft / (slideWidth + gap));
+    
+                        const nextDot = list.parentElement.querySelector('.bf-classesSliderDot:nth-child(' + (nextDotIndex + 1) + ')');
+    
+                        if (nextDot) {
+                            if (!nextDot.classList.contains('bf-classesSliderDot__active')) {
+                                currentDot.classList.remove('bf-classesSliderDot__active');
+                                nextDot.classList.add('bf-classesSliderDot__active');
+                            }
+                        }
+                    }
+                
+                }
+            }
+    );
+
+
     // Modals
 
     let currentModal = null;
@@ -848,8 +883,10 @@ document.addEventListener("DOMContentLoaded", () => {
             else {
                 showPromoModal();
             }
-        }, 10000);
+        }, 60000);
     }
+
+    showPromoModal();
 
     const courceModalButton = document.querySelector('a[href="#cource-modal"]');
     if (courceModalButton) {

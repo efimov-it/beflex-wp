@@ -25,6 +25,20 @@
     ?>
     </div>
 
+    <div class="bf-classesSlider_dots bf-franchizeStepsDots">
+        <?php
+        foreach ($attributes['steps'] as $i => $step) {
+            if (count($attributes['steps']) - 1 > $i) {
+        ?>
+        <button
+            class="bf-classesSliderDot<?=$i === 0 ? ' bf-classesSliderDot__active' : ''?>"
+            type="button"></button>
+        <?php
+            }
+        }
+        ?>
+    </div>
+
     <button class="bf-button bf-franchizeStepsButton" type="button">
         <span class="bf-button_text">
             стать частью beflex
