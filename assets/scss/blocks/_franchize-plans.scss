@@ -1,0 +1,438 @@
+.wp-block-lazyblock-franchize-plans {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+    
+    &-franchizePlans {
+        display: flex;
+        flex-direction: column;
+
+        gap: vw(48px, 430px);
+
+        @media screen and (min-width: 526px) {
+            gap: vw(48px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            gap: unset;
+        }
+    
+        &_list {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            width: 100vw;
+
+            transform: translate(vw(-21px, 430px));
+            padding: vw(52px, 430px) vw(48px, 430px) vw(88px, 430px);
+            gap: vw(48px, 430px);
+
+            @media screen and (min-width: 526px) {
+                transform: translateX(vw(-21px, 744px));
+                padding: vw(52px, 744px) vw(48px, 744px) vw(88px, 744px);
+                gap: vw(48px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                width: 100%;
+                transform: none;
+                padding: vw(52px) vw(112px) vw(88px);
+                gap: vw(42px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                gap: 42px;
+                padding: 52px 112px 88px;
+            }
+            
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &_dots {
+            @media screen and (min-width: 921px) {
+                display: none;
+            }
+        }
+    }
+    
+    &-franchizePlan {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+        border: #E056BA solid;
+
+        padding: vw(40px, 430px) vw(16px, 430px) vw(16px, 430px);
+        border-radius: vw(16px, 430px);
+        border-width: vw(1px, 430px);
+        min-width: vw(334px, 430px);
+        max-width: vw(334px, 430px);
+
+        @media screen and (min-width: 526px) {
+            padding: vw(40px, 744px) vw(16px, 744px) vw(16px, 744px);
+            border-radius: vw(16px, 744px);
+            border-width: vw(1px, 744px);
+            min-width: vw(334px, 744px);
+            max-width: vw(334px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            padding: vw(40px) vw(16px) vw(16px);
+            border-radius: vw(16px);
+            border-width: vw(1px);
+            min-width: vw(334px);
+            max-width: vw(334px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            padding: 40px 16px 16px;
+            border-radius: 16px;
+            border-width: 1px;
+            min-width: 334px;
+            max-width: 334px;
+        }
+    
+        &_num {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 0px;
+            top: 0px;
+            transform: translate3d(-50%, -50%, 0px);
+            
+            font-family: 'Yeseva One', serif;
+            color: #ffffff;
+            font-weight: 400;
+
+            font-size: vw(44px, 430px);
+
+            @media screen and (min-width: 526px) {
+                font-size: vw(44px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                font-size: vw(44px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                font-size: 44px;
+            }
+        }
+        
+        &_name {
+            width: fit-content;
+            font-family: 'Roboto Flex', sans-serif;
+            font-weight: 700;
+            color: #242424;
+            line-height: 140%;
+
+            font-size: vw(20px, 430px);
+            border-radius: vw(8px, 430px);
+            padding: 0px vw(8px, 430px);
+            margin-bottom: vw(8px, 430px);
+
+            @media screen and (min-width: 526px) {
+                font-size: vw(20px, 744px);
+                border-radius: vw(8px, 744px);
+                padding: 0px vw(8px, 744px);
+                margin-bottom: vw(8px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                font-size: vw(20px);
+                border-radius: vw(8px);
+                padding: 0px vw(8px);
+                margin-bottom: vw(8px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                font-size: 20px;
+                border-radius: 8px;
+                padding: 0px 8px;
+                margin-bottom: 8px;
+            }
+        }
+        
+        &_description {
+            margin-bottom: auto;
+
+            & ul {
+                display: flex;
+                flex-direction: column;
+                
+                padding-left: vw(24px, 430px);
+                gap: vw(16px, 430px);
+
+                @media screen and (min-width: 526px) {
+                    padding-left: vw(24px, 744px);
+                    gap: vw(16px, 744px);
+                }
+                
+                @media screen and (min-width: 921px) {
+                    padding-left: vw(24px);
+                    gap: vw(16px);
+                }
+                
+                @media screen and (min-width: 1440px) {
+                    padding-left: 24px;
+                    gap: 16px;
+                }
+            }
+
+            & li {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                gap: vw(12px, 430px);
+
+                @media screen and (min-width: 526px) {
+                    gap: vw(12px, 744px);
+                }
+                
+                @media screen and (min-width: 921px) {
+                    gap: vw(12px);
+                }
+                
+                @media screen and (min-width: 1440px) {
+                    gap: 12px;
+                }
+
+                &::before {
+                    position: absolute;
+                    content: '•';
+                    transform: translateX(-200%);
+                }
+            }
+
+            & * {
+                font-family: 'Roboto Flex', sans-serif;
+                color: #242424;
+                font-weight: 500;
+                line-height: 140%;
+                
+                font-size: vw(16px, 430px);
+
+                @media screen and (min-width: 526px) {
+                    font-size: vw(16px, 744px);
+                }
+
+                @media screen and (min-width: 921px) {
+                    font-size: vw(16px);
+                }
+
+                @media screen and (min-width: 1440px) {
+                    font-size: 16px;
+                }
+            }
+        }
+        
+        &_servicesTitle {
+            width: fit-content;
+            font-family: 'Roboto Flex', sans-serif;
+            font-weight: 700;
+            color: #242424;
+            line-height: 140%;
+
+            font-size: vw(20px, 430px);
+            border-radius: vw(8px, 430px);
+            padding: 0px vw(8px, 430px);
+            margin-bottom: vw(8px, 430px);
+            margin-top: vw(32px, 430px);
+
+            @media screen and (min-width: 526px) {
+                font-size: vw(20px, 744px);
+                border-radius: vw(8px, 744px);
+                padding: 0px vw(8px, 744px);
+                margin-bottom: vw(8px, 744px);
+                margin-top: vw(32px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                font-size: vw(20px);
+                border-radius: vw(8px);
+                padding: 0px vw(8px);
+                margin-bottom: vw(8px);
+                margin-top: vw(32px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                font-size: 20px;
+                border-radius: 8px;
+                padding: 0px 8px;
+                margin-bottom: 8px;
+                margin-top: 32px;
+            }
+        }
+        
+        &_services {
+
+            & ul {
+                display: flex;
+                flex-direction: column;
+                
+                padding-left: vw(24px, 430px);
+                gap: vw(16px, 430px);
+
+                @media screen and (min-width: 526px) {
+                    padding-left: vw(24px, 744px);
+                    gap: vw(16px, 744px);
+                }
+                
+                @media screen and (min-width: 921px) {
+                    padding-left: vw(24px);
+                    gap: vw(16px);
+                }
+                
+                @media screen and (min-width: 1440px) {
+                    padding-left: 24px;
+                    gap: 16px;
+                }
+            }
+
+            & li {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                gap: vw(12px, 430px);
+
+                @media screen and (min-width: 526px) {
+                    gap: vw(12px, 744px);
+                }
+                
+                @media screen and (min-width: 921px) {
+                    gap: vw(12px);
+                }
+                
+                @media screen and (min-width: 1440px) {
+                    gap: 12px;
+                }
+
+                &::before {
+                    position: absolute;
+                    content: ' ';
+                    transform: translateX(-110%);
+                    background-image: url(/wp-content/themes/Beflex/assets/imgs/plans_list.svg);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+
+                    width: vw(24px, 430px);
+                    height: vw(24px, 430px);
+
+                    @media screen and (min-width: 526px) {
+                        width: vw(24px, 744px);
+                        height: vw(24px, 744px);
+                    }
+
+                    @media screen and (min-width: 921px) {
+                        width: vw(24px);
+                        height: vw(24px);
+                    }
+
+                    @media screen and (min-width: 1440px) {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+
+            & * {
+                font-family: 'Roboto Flex', sans-serif;
+                color: #242424;
+                font-weight: 500;
+                line-height: 140%;
+                
+                font-size: vw(16px, 430px);
+
+                @media screen and (min-width: 526px) {
+                    font-size: vw(16px, 744px);
+                }
+
+                @media screen and (min-width: 921px) {
+                    font-size: vw(16px);
+                }
+
+                @media screen and (min-width: 1440px) {
+                    font-size: 16px;
+                }
+            }
+        }
+        
+        &_button {
+            position: absolute;
+
+            bottom: vw(-88px, 430px);
+            width: vw(334px, 430px);
+            transform: translateX(vw(-16px, 430px));
+
+            @media screen and (min-width: 526px) {
+                bottom: vw(-88px, 744px);
+                width: vw(334px, 744px);
+                transform: translateX(vw(-16px, 744px));
+            }
+            
+            @media screen and (min-width: 921px) {
+                bottom: vw(-88px);
+                width: vw(334px);
+                transform: translateX(vw(-16px));
+            }
+            
+            @media screen and (min-width: 1440px) {
+                bottom: -88px;
+                width: 334px;
+                transform: translateX(-16px);
+            }
+        }
+    }
+
+    &-franchizePlanNumBG {
+        position: absolute;
+        vertical-align: bottom;
+        z-index: -1;
+
+        width: vw(95px, 430px);
+        height: vw(88px, 430px);
+
+        @media screen and (min-width: 526px) {
+            width: vw(95px, 744px);
+            height: vw(88px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            width: vw(95px);
+            height: vw(88px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            width: 95px;
+            height: 88px;
+        }
+    }
+
+    &-franchizePlan:nth-child(3n-2) &-franchizePlan_name,
+    &-franchizePlan:nth-child(3n-2) &-franchizePlan_servicesTitle {
+        background: #DCA8F5;
+    }
+
+    &-franchizePlan:nth-child(3n-1) &-franchizePlan_name,
+    &-franchizePlan:nth-child(3n-1) &-franchizePlan_servicesTitle {
+        background: #FF92E0;
+    }
+
+    &-franchizePlan:nth-child(3n) &-franchizePlan_name,
+    &-franchizePlan:nth-child(3n) &-franchizePlan_servicesTitle {
+        background: #C4FF63;
+    }
+}

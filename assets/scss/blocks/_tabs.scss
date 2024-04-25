@@ -1,0 +1,172 @@
+.wp-block-lazyblock-tabs {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf-tabsWrapper {
+    margin: 0px auto;
+
+    width: vw(388px, 430px);
+    padding: vw(64px, 430px) 0px;
+
+    @media screen and (min-width: 526px) {
+        width: vw(702px, 744px);
+        padding: vw(64px, 744px) 0px;
+    }
+    
+    @media screen and (min-width: 921px) {
+        width: vw(1312px);
+        padding: vw(40px) 0px;
+    }
+    
+    @media screen and (min-width: 1440px) {
+        width: 1312px;
+        padding: 40px 0px;
+    }
+}
+
+.bf-tabs {
+    display: flex;
+    flex-direction: row;
+    background: #ffffff;
+    border: #E056BA solid;
+    width: fit-content;
+    overflow: hidden;
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 0px;
+
+    border-width: vw(1px, 430px);
+    border-radius: vw(8px, 430px);
+
+    @media screen and (min-width: 526px) {
+        border-width: vw(1px, 744px);
+        border-radius: vw(8px, 744px);
+    }
+    
+    @media screen and (min-width: 921px) {
+        border-width: vw(1px);
+        border-radius: vw(8px);
+    }
+    
+    @media screen and (min-width: 1440px) {
+        border-width: 1px;
+        border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &_tab {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Roboto Flex', sans-serif;
+        cursor: pointer;
+        color: #E056BA;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
+        min-width: vw(164px, 430px);
+        max-width: vw(164px, 430px);
+        height: vw(40px, 430px);
+        border-left-width: vw(1px, 430px);
+        font-size: vw(16px, 430px);
+
+        @media screen and (min-width: 526px) {
+            min-width: vw(164px, 744px);
+            max-width: vw(164px, 744px);
+            height: vw(40px, 744px);
+            border-left-width: vw(1px, 744px);
+            font-size: vw(16px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            min-width: vw(180px);
+            max-width: vw(180px);
+            height: vw(40px);
+            border-left-width: vw(1px);
+            font-size: vw(16px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            min-width: 180px;
+            max-width: 180px;
+            height: 40px;
+            border-left-width: 1px;
+            font-size: 16px;
+        }
+
+        &:not(:last-child) {
+            border-right: solid #E056BA;
+
+            border-right-width: vw(1px, 430px);
+
+            @media screen and (min-width: 526px) {
+                border-right-width: vw(1px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                border-right-width: vw(1px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                border-right-width: 1px;
+            }
+        }
+
+        &__active {
+            background: #E056BA;
+            cursor: default;
+            color: #ffffff;
+        }
+    }
+}
+
+.bf-tabLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    align-items: center;
+    font-family: 'Roboto Flex', sans-serif;
+    color: #E056BA;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 100%;
+
+    transition: color 0.3s ease-in-out;
+
+    font-size: vw(16px, 430px);
+
+    @media screen and (min-width: 526px) {
+        font-size: vw(16px, 744px);
+    }
+    
+    @media screen and (min-width: 921px) {
+        font-size: vw(16px);
+    }
+    
+    @media screen and (min-width: 1440px) {
+        font-size: 16px;
+    }
+}
+
+.bf-tabs_tab__active > .bf-tabLink {
+    cursor: default;
+    color: #ffffff;
+    pointer-events: none;
+}

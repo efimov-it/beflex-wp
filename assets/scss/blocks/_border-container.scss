@@ -1,0 +1,60 @@
+.wp-block-lazyblock-border-container {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+    &-borderContainer {
+        border: solid #FF92E0;
+
+        border-width: vw(2px, 430px);
+        border-radius: vw(16px, 430px);
+        padding: vw(64px, 430px) vw(48px, 430px);
+
+        @media screen and (min-width: 526px) {
+            border-width: vw(2px, 744px);
+            border-radius: vw(16px, 744px);
+            padding: vw(52px, 744px) vw(80px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            border-width: vw(2px);
+            border-radius: vw(16px);
+            padding: vw(52px) vw(80px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            border-width: 2px;
+            border-radius: 16px;
+            padding: 52px 80px;
+        }
+
+        & > div > div {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap !important;
+            justify-content: center;
+    
+            gap: vw(92px, 430px);
+    
+            @media screen and (min-width: 526px) {
+                justify-content: space-between;
+                gap: vw(112px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                gap: vw(132px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                gap: 132px;
+            }
+        }
+    }
+}

@@ -1,0 +1,159 @@
+.wp-block-lazyblock-about-text {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+    &-aboutText {
+        display: flex;
+        flex-direction: row;
+
+        padding: vw(80px, 430px) 0px;
+
+        @media screen and (min-width: 526px) {
+            padding: vw(80px, 744px) 0px;
+        }
+        
+        @media screen and (min-width: 921px) {
+            padding: vw(32px) 0px;
+        }
+        
+        @media screen and (min-width: 1440px) {
+            padding: 32px 0px;
+        }
+
+        &__right {
+
+            @media screen and (min-width: 526px) {
+                
+            }
+            
+            @media screen and (min-width: 921px) {
+                justify-content: flex-end;
+            }
+            
+            @media screen and (min-width: 1440px) {
+                
+            }
+
+            & p {
+
+                @media screen and (min-width: 526px) {
+                    
+                }
+                
+                @media screen and (min-width: 921px) {
+                    text-align: right;
+                }
+                
+                @media screen and (min-width: 1440px) {
+                    
+                }
+            }
+        }
+
+        &_text {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            width: vw(388px, 430px);
+
+            @media screen and (min-width: 526px) {
+                align-items: center;
+                width: vw(640px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                width: vw(640px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                width: 640px;
+            }
+
+            & p {
+                font-family: 'Roboto Flex';
+                font-weight: 500;
+                color: #101010;
+    
+                font-size: vw(24px, 430px);
+    
+                @media screen and (min-width: 526px) {
+                    font-size: vw(24px, 744px);
+                }
+                
+                @media screen and (min-width: 921px) {
+                    font-size: vw(26px);
+                }
+                
+                @media screen and (min-width: 1440px) {
+                    font-size: 26px;
+                }
+            }
+
+            &__ellips::before {
+                content: ' ';
+                position: absolute;
+                z-index: -1;
+                width: 200%;
+                height: 180%;
+                border-radius: 50%;
+                background: #ffffff;
+                border: dashed #DCA8F5;
+
+                transform: rotate(8deg)
+                           translate3d(-30%, 16%, 0px);
+                border-width: vw(3px, 430px);
+
+                @media screen and (min-width: 526px) {
+                    width: 120%;
+                    height: 240%;
+
+                    transform: rotate(8deg);
+                    border-width: vw(3px, 744px);
+                }
+                
+                @media screen and (min-width: 921px) {
+                    transform: rotate(8deg)
+                               translateX(vw(-32px));
+                    border-width: vw(3px);
+                }
+                
+                @media screen and (min-width: 1440px) {
+                    transform: rotate(8deg)
+                               translateX(-32px);
+                    border-width: 3px;
+                }
+            }
+        }
+
+        &__right &_text__ellips::before {
+
+            transform: rotate(-8deg)
+                       translate3d(-30%, -10%, 0px);
+
+            @media screen and (min-width: 526px) {
+                transform: rotate(-8deg)
+                           translateX(0%);
+            }
+            
+            @media screen and (min-width: 921px) {
+                transform: rotate(-8deg)
+                           translateX(vw(32px));
+            }
+            
+            @media screen and (min-width: 1440px) {
+                transform: rotate(-8deg)
+                           translateX(32px);
+            }
+        }
+    }
+}

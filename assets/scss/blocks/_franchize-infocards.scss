@@ -1,0 +1,156 @@
+.wp-block-lazyblock-franchize-infocards {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+    &-franchizeInfoCards {
+        display: flex;
+        flex-direction: column;
+
+        gap: vw(36px, 430px);
+
+        @media screen and (min-width: 526px) {
+            gap: vw(36px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            gap: unset;
+        }
+        
+        @media screen and (min-width: 1440px) {
+            
+        }
+
+        &_list {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            width: 100vw;
+
+            transform: translateX(vw(-21px, 430px));
+            padding: 0px vw(21px, 430px);
+            gap: vw(24px, 430px);
+
+            @media screen and (min-width: 526px) {
+                transform: translateX(vw(-21px, 744px));
+                padding: 0px vw(21px, 744px);
+                gap: vw(24px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                flex-wrap: wrap;
+                padding: 0px;
+                transform: none;
+                width: 100%;
+            
+                gap: vw(38px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                gap: 38px;
+            }
+            
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &_dots {
+            @media screen and (min-width: 921px) {
+                display: none;
+            }
+        }
+    }
+
+    &-franchizeInfoCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #E056BA;
+
+        min-width: vw(232px, 430px);
+        max-width: vw(232px, 430px);
+        min-height: vw(300px, 430px);
+        padding: vw(24px, 430px) vw(16px, 430px) vw(12px, 430px);
+        border-radius: vw(8px, 430px);
+        gap: vw(8px, 430px);
+
+        @media screen and (min-width: 526px) {
+            min-width: vw(232px, 744px);
+            max-width: vw(232px, 744px);
+            min-height: vw(300px, 744px);
+            padding: vw(24px, 744px) vw(16px, 744px) vw(12px, 744px);
+            border-radius: vw(8px, 744px);
+            gap: vw(8px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            min-width: vw(232px);
+            max-width: vw(232px);
+            min-height: vw(300px);
+            padding: vw(24px) vw(16px) vw(12px);
+            border-radius: vw(8px);
+            gap: vw(8px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            min-width: 232px;
+            max-width: 232px;
+            min-height: 300px;
+            padding: 24px 16px 12px;
+            border-radius: 8px;
+            gap: 8px;
+        }
+        
+        &_title {
+            font-family: 'Roboto Flex', sans-serif;
+            text-align: center;
+            line-height: 140%;
+            color: #C4FF63;
+            font-weight: 700;
+
+            font-size: vw(22px, 430px);
+
+            @media screen and (min-width: 526px) {
+                font-size: vw(22px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                font-size: vw(22px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                font-size: 22px;
+            }
+        }
+        
+        &_text {
+            font-family: 'Roboto Flex', sans-serif;
+            text-align: center;
+            margin: auto 0px;
+            font-family: 500;
+            color: #ffffff;
+
+            font-size: vw(20px, 430px);
+
+            @media screen and (min-width: 526px) {
+                font-size: vw(20px, 744px);
+            }
+
+            @media screen and (min-width: 921px) {
+                font-size: vw(20px);
+            }
+
+            @media screen and (min-width: 1440px) {
+                font-size: 20px;
+            }
+        }
+    }
+}

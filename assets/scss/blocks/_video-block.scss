@@ -1,0 +1,117 @@
+.wp-block-lazyblock-video-block {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+    &-videoBlock {
+        display: flex;
+        flex-direction: column;
+
+        gap: vw(36px, 430px);
+
+        @media screen and (min-width: 526px) {
+            gap: vw(36px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            flex-direction: row;
+            gap: vw(48px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            gap: 48px;
+        }
+
+        &_video {
+            object-fit: cover;
+
+            width: vw(388px, 430px);
+            height: vw(464px, 430px);
+            border-radius: vw(12px, 430px);
+
+            @media screen and (min-width: 526px) {
+                width: vw(702px, 744px);
+                height: vw(464px, 744px);
+                border-radius: vw(12px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                width: vw(764px);
+                height: vw(432px);
+                border-radius: vw(12px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                width: 764px;
+                height: 432px;
+                border-radius: 12px;
+            }
+        }
+
+        &_content {
+            display: flex;
+            flex-direction: column;
+
+            gap: vw(24px, 430px);
+
+            @media screen and (min-width: 526px) {
+                gap: vw(24px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                gap: vw(24px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                gap: 24px;
+            }
+        }
+    }
+    
+    &-videoBlockTitle {
+        font-family: 'Roboto Flex', sans-serif;
+        color: #101010;
+        font-weight: 600;
+
+        font-size: vw(30px, 430px);
+
+        @media screen and (min-width: 526px) {
+            font-size: vw(30px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            font-size: vw(30px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            font-size: 30px;
+        }
+    }
+
+    &-videoBlockText {
+        font-family: 'Roboto Flex', sans-serif;
+        color: #101010;
+        font-weight: 500;
+
+        font-size: vw(24px, 430px);
+
+        @media screen and (min-width: 526px) {
+            font-size: vw(24px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            font-size: vw(24px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            font-size: 24px;
+        }
+    }
+}

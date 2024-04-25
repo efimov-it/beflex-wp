@@ -1,0 +1,103 @@
+.wp-block-lazyblock-simple-title {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+    &-simpleTitle {
+        display: flex;
+        flex-direction: column;
+
+        gap: vw(12px, 430px);
+        width: vw(388px, 430px);
+        margin: vw(20px, 430px) auto vw(32px, 430px);
+
+        @media screen and (min-width: 526px) {
+            gap: vw(20px, 744px);
+            width: vw(702px, 744px);
+            margin: vw(20px, 744px) auto vw(32px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            gap: vw(28px);
+            width: vw(1316px);
+            margin: vw(20px) auto vw(64px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            gap: 28px;
+            width: 1316px;
+            margin: 20px auto 40px;
+        }
+
+        &_link {
+            margin: 0px;
+            padding: 0px;
+            width: fit-content;
+        }
+
+        &_backText {
+            display: none;
+            color: #FF92E0;
+            font-family: 'Roboto Flex', sans-serif;
+            font-weight: 500;
+            text-transform: lowercase;
+            
+            @media screen and (min-width: 921px) {
+                display: inline;
+                font-size: vw(20px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                font-size: 20px;
+            }
+        }
+
+        &_backIcon {
+            vertical-align: bottom;
+
+            width: vw(40px, 430px);
+            height: vw(40px, 430px);
+
+            @media screen and (min-width: 526px) {
+                width: vw(40px, 744px);
+                height: vw(40px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                display: none;
+            }
+        }
+
+        &_text {
+            font-family: "Yeseva One", serif;
+            color: #101010;
+            font-weight: 400;
+            margin: 0px;
+            padding: 0px;
+            hyphens: auto;
+            text-transform: uppercase;
+            
+            font-size: vw(48px, 430px);
+
+            @media screen and (min-width: 526px) {
+                font-size: vw(48px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                max-width: 80%;
+                font-size: vw(64px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                font-size: 64px;
+            }
+        }
+    }
+}

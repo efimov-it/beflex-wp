@@ -1,0 +1,42 @@
+.wp-block-lazyblock-all-news {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+    &-allNews {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0px auto;
+
+        gap: vw(64px, 430px);
+        width: vw(388px, 430px);
+        margin-bottom: vw(100px, 430px);
+
+        @media screen and (min-width: 526px) {
+            justify-content: flex-start;
+            gap: vw(100px, 744px);
+            width: vw(702px, 744px);
+            margin-bottom: vw(100px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            gap: vw(20px);
+            width: vw(1312px);
+            margin-bottom: 0px;
+        }
+        
+        @media screen and (min-width: 1440px) {
+            gap: 20px;
+            width: 1312px;
+        }
+    }
+}

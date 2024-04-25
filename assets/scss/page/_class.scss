@@ -1,0 +1,299 @@
+.bf {
+
+    &-classDif {
+        display: flex;
+        flex-direction: column;
+
+        gap: vw(4px, 430px);
+        padding: 0px vw(20px, 430px) vw(44px, 430px);
+
+        @media screen and (min-width: 526px) {
+            gap: vw(4px, 744px);
+            padding: 0px vw(20px, 744px) vw(44px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            position: absolute;
+            right: calc(50% - #{vw(656px)});
+            top: vw(176px);
+            gap: vw(4px);
+            padding: 0px;
+        }
+        
+        @media screen and (min-width: 1440px) {
+            right: calc(50% - 656px);
+            top: 176px;
+            gap: 4px;
+        }
+        
+        &_text {
+            font-family: 'Roboto Flex', sans-serif;
+            font-weight: 600;
+
+            font-size: vw(24px, 430px);
+
+            @media screen and (min-width: 526px) {
+                font-size: vw(24px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                font-size: vw(24px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                font-size: 24px;
+            }
+        }
+        
+        &_level {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            gap: vw(8px, 430px);
+
+            @media screen and (min-width: 526px) {
+                gap: vw(8px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                gap: vw(8px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                gap: 8px;
+            }
+        }
+    }
+
+    &-classDifStar {
+        width: vw(36px, 430px);
+        height: vw(34px, 430px);
+
+        @media screen and (min-width: 526px) {
+            width: vw(36px, 744px);
+            height: vw(34px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            width: vw(36px);
+            height: vw(34px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            width: 36px;
+            height: 34px;
+        }
+
+        &__active {
+            & path {
+                fill: #FF96E2;
+            }
+        }
+    }
+
+    &-classInfo {
+        display: flex;
+        flex-direction: column;
+
+        gap: vw(24px, 430px);
+        padding: 0px vw(20px, 430px);
+
+        @media screen and (min-width: 526px) {
+            gap: vw(32px, 744px);
+            padding: 0px vw(20px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            flex-direction: row;
+            gap: vw(80px);
+            width: vw(1312px);
+            padding: 0px;
+            margin: 0px auto;
+        }
+        
+        @media screen and (min-width: 1440px) {
+            gap: 80px;
+            width: 1312px;
+        }
+
+        &_img {
+            object-fit: cover;
+            vertical-align: bottom;
+
+            max-width: vw(390px, 430px);
+            min-width: vw(390px, 430px);
+            max-height: vw(390px, 430px);
+            min-height: vw(390px, 430px);
+            border-radius: vw(16px, 430px);
+
+            @media screen and (min-width: 526px) {
+                max-width: vw(704px, 744px);
+                min-width: vw(704px, 744px);
+                max-height: vw(440px, 744px);
+                min-height: vw(440px, 744px);
+                border-radius: vw(16px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                max-width: vw(440px);
+                min-width: vw(440px);
+                max-height: vw(440px);
+                min-height: vw(440px);
+                border-radius: vw(16px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                max-width: 440px;
+                min-width: 440px;
+                max-height: 440px;
+                min-height: 440px;
+                border-radius: 16px;
+            }
+        }
+
+        &_content {
+            display: flex;
+            flex-direction: column;
+            
+            gap: vw(44px, 430px);
+
+            @media screen and (min-width: 526px) {
+                gap: vw(44px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                gap: vw(52px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                gap: 52px;
+            }
+        }
+    }
+
+    &-classInfoContent {
+        display: flex;
+        flex-direction: column;
+        
+        gap: vw(16px, 430px);
+
+        @media screen and (min-width: 526px) {
+            gap: vw(16px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            gap: vw(8px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            gap: 8px;
+        }
+        
+        &_wrapper {
+            display: flex;
+            flex-direction: column;
+
+            gap: vw(16px, 430px);
+
+            @media screen and (min-width: 526px) {
+                gap: vw(16px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {    
+                gap: vw(16px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                gap: 16px;
+            }
+
+            & * {
+                font-family: 'Roboto Flex', sans-serif;
+                font-weight: 500;
+
+                font-size: vw(20px, 430px);
+                line-height: vw(28px, 430px);
+
+                @media screen and (min-width: 526px) {
+                    font-size: vw(20px, 744px);
+                    line-height: vw(28px, 744px);
+                }
+                
+                @media screen and (min-width: 921px) {
+                    font-size: vw(20px);
+                    line-height: vw(28px);
+                }
+                
+                @media screen and (min-width: 1440px) {
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+            }
+
+            & strong {
+                font-weight: 700;
+            }
+        }
+        
+        &_showMore {
+            display: none;
+
+            font-family: 'Roboto Flex', sans-serif;
+            font-weight: 600;
+            color: #E056BA;
+            cursor: pointer;
+
+            font-size: vw(18px, 430px);
+
+            @media screen and (min-width: 526px) {
+                font-size: vw(18px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                font-size: vw(18px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                font-size: 18px;
+            }
+        }
+    }
+
+    &-classInfoActions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: vw(16px, 430px);
+
+        @media screen and (min-width: 526px) {
+            gap: vw(16px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            flex-direction: row;
+            gap: vw(10px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            gap: 10px;
+        }
+
+        &_button {
+            width: 100% !important;
+
+            @media screen and (min-width: 526px) {
+                
+            }
+            
+            @media screen and (min-width: 921px) {
+                width: vw(248px) !important;
+            }
+            
+            @media screen and (min-width: 1440px) {
+                width: 248px !important;
+            }
+        }
+    }
+}

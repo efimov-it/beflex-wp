@@ -1,0 +1,156 @@
+
+.bf-404Flower {
+    position: absolute;
+    animation: mb-rotate 100s linear 0s infinite;;
+
+    width: vw(196px, 430px);
+    height: vw(196px, 430px);
+    top: vw(220px, 430px);
+    left: vw(-80px, 430px);
+
+    @media screen and (min-width: 526px) {
+        width: vw(196px, 744px);
+        height: vw(196px, 744px);
+        top: vw(220px, 744px);
+        left: vw(-80px, 744px);
+    }
+    
+    @media screen and (min-width: 921px) {
+        width: vw(432px);
+        height: vw(432px);
+        top: vw(148px);
+        left: calc(50% - #{vw(440px)});
+    }
+    
+    @media screen and (min-width: 1440px) {
+        width: 432px;
+        height: 432px;
+        top: 148px;
+        left: calc(50% - 440px);
+    }
+}
+
+.bf-404Weight {
+    position: absolute;
+    transform: rotate(-10deg);
+
+    width: vw(132px, 430px);
+    height: vw(56px, 430px);
+    left: vw(44px, 430px);
+    top: vw(80px, 430px);
+
+    @media screen and (min-width: 526px) {
+        width: vw(132px, 744px);
+        height: vw(56px, 744px);
+        top: vw(80px, 744px);
+        left: vw(44px, 744px);
+    }
+    
+    @media screen and (min-width: 921px) {
+        width: vw(132px);
+        height: vw(56px);
+        top: vw(308px);
+        left: calc(50% - #{vw(240px)});
+    }
+    
+    @media screen and (min-width: 1440px) {
+        width: 132px;
+        height: 56px;
+        top: 308px;
+        left: calc(50% - 240px);
+    }
+}
+
+.bf-404Sad {
+    position: absolute;
+    transform: rotate(-10deg);
+    
+    width: vw(125px, 430px);
+    height: vw(125px, 430px);
+    right: vw(-12px, 430px);
+    top: vw(360px, 430px);
+
+    @media screen and (min-width: 526px) {
+        width: vw(125px, 744px);
+        height: vw(125px, 744px);
+        top: vw(360px, 744px);
+        right: vw(-12px, 744px);
+    }
+    
+    @media screen and (min-width: 921px) {
+        right: auto;
+        width: vw(125px);
+        height: vw(125px);
+        top: vw(448px);
+        left: calc(50% + #{vw(300px)});
+    }
+    
+    @media screen and (min-width: 1440px) {
+        width: 125px;
+        height: 125px;
+        top: vw(448px);
+        left: calc(50% + 300px);
+    }
+}
+
+.bf-404Title {
+    position: relative;
+    font-family: "Yeseva One", serif;
+    text-align: center;
+    line-height: 140%;
+    z-index: 2;
+    font-weight: 400;
+
+    margin-bottom: vw(20px, 430px);
+    font-size: vw(84px, 430px);
+
+    @media screen and (min-width: 526px) {
+        margin-bottom: vw(20px, 744px);
+        font-size: vw(84px, 744px);
+    }
+    
+    @media screen and (min-width: 921px) {
+        text-align: left;
+
+        width: vw(600px);
+        margin-bottom: vw(4px);
+        font-size: vw(84px);
+        transform: translateX(vw(100px));
+    }
+    
+    @media screen and (min-width: 1440px) {
+        width: 600px;
+        margin-bottom: 4px;
+        font-size: 84px;
+        transform: translateX(100px);
+    }
+}
+
+.bf-404Text {
+    position: relative;
+    font-family: 'Roboto Flex', sans-serif;
+    text-align: center;
+    line-height: 140%;
+    z-index: 2;
+
+    font-size: vw(32px, 430px);
+
+    @media screen and (min-width: 526px) {
+        width: vw(400px, 744px);
+        font-size: vw(32px, 744px);
+    }
+    
+    @media screen and (min-width: 921px) {
+        text-align: left;
+
+        width: vw(600px);
+        font-size: vw(32px);
+        transform: translateX(vw(100px));
+    }
+    
+    @media screen and (min-width: 1440px) {
+        width: 600px;
+        font-size: 32px;
+        transform: translateX(100px);
+    }
+}

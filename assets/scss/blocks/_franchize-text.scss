@@ -1,0 +1,63 @@
+.wp-block-lazyblock-franchize-text {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+    &-franchizeText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0px auto;
+
+        width: vw(388px, 430px);
+        padding: vw(132px, 430px) 0px;
+        gap: vw(38px, 430px);
+
+        @media screen and (min-width: 526px) {
+            width: vw(702px, 744px);
+            padding: vw(132px, 744px) 0px;
+            gap: vw(38px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            width: vw(1312px);
+            padding: vw(180px) 0px;
+            gap: vw(28px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            width: 1312px;
+            padding: 180px 0px;
+            gap: 28px;
+        }
+
+        &_text {
+            font-family: 'Roboto Flex', sans-serif;
+            color: #101010;
+            font-weight: 600;
+            text-align: center;
+
+            font-size: vw(32px, 430px);
+
+            @media screen and (min-width: 526px) {
+                font-size: vw(32px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                font-size: vw(32px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                font-size: 32px;
+            }
+        }
+    }
+}

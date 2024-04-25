@@ -1,0 +1,273 @@
+.wp-block-lazyblock-about-slider {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+    &-aboutSlider {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        gap: vw(32px, 430px);
+
+        @media screen and (min-width: 526px) {
+            gap: vw(32px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            gap: vw(32px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            gap: 32px;
+        }
+
+        &_list {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            overflow-y: hidden;
+            overflow-x: auto;
+            width: 100vw;
+
+            transform: translateX(vw(-21px, 430px));
+            padding: 0px vw(21px, 430px);
+            gap: vw(21px, 430px);
+
+            @media screen and (min-width: 526px) {
+                transform: translateX(vw(-21px, 744px));
+                padding: 0px vw(21px, 744px);
+                gap: vw(21px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                width: 100%;
+                gap: unset;
+                padding: 0px;
+                transform: none;
+
+                height: vw(456px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                height: 456px;
+            }
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &_nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            @media screen and (min-width: 526px) {
+                
+            }
+            
+            @media screen and (min-width: 921px) {
+                
+            }
+            
+            @media screen and (min-width: 1440px) {
+                
+            }
+        }
+    }
+
+
+    &-aboutSliderDots {
+        justify-content: flex-end !important;
+        padding: 0px !important;
+
+        @media screen and (min-width: 526px) {
+            
+        }
+        
+        @media screen and (min-width: 921px) {
+            justify-content: flex-start !important;
+        }
+        
+        @media screen and (min-width: 1440px) {
+            
+        }
+    }
+
+    &-aboutSlide {
+        display: flex;
+        flex-direction: column-reverse;
+        transition: opacity 0.3s ease-in-out;
+
+        gap: vw(24px, 430px);
+        min-width: vw(388px, 430px);
+        max-width: vw(388px, 430px);
+
+        @media screen and (min-width: 526px) {
+            min-width: vw(702px, 744px);
+            max-width: vw(702px, 744px);
+            gap: vw(24px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            opacity: 0;
+            position: absolute;
+            flex-direction: row;
+            min-width: 0px;
+            max-width: none;
+
+            width: 100%;
+        
+            gap: vw(28px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            gap: 28px;
+        }
+
+        @media screen and (max-width: 920px) {
+            display: flex !important;
+        }
+
+        &__active {
+            opacity: 1;
+        }
+
+        &_img {
+            object-fit: cover;
+            vertical-align: bottom;
+            
+            width: vw(388px, 430px);
+            height: vw(456px, 430px);
+            border-radius: vw(16px, 430px);
+
+            @media screen and (min-width: 526px) {
+                width: vw(702px, 744px);
+                height: vw(456px, 744px);
+                border-radius: vw(16px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                width: vw(651px);
+                height: vw(456px);
+                border-radius: vw(16px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                width: 651px;
+                height: 456px;
+                border-radius: 16px;
+            }
+        }
+
+        &_content {
+            display: flex;
+            flex-direction: column;
+
+            @media screen and (min-width: 526px) {
+                
+            }
+            
+            @media screen and (min-width: 921px) {
+                
+            }
+            
+            @media screen and (min-width: 1440px) {
+                
+            }
+        }
+    }
+
+    &-aboutSlideTitle {
+        font-family: 'Roboto Flex', sans-serif;
+        font-weight: 600;
+        color: #101010;
+
+        font-size: vw(32px, 430px);
+        margin-bottom: vw(24px, 430px);
+
+        @media screen and (min-width: 526px) {
+            font-size: vw(32px, 744px);
+            margin-bottom: vw(24px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            font-size: vw(32px);
+            margin-bottom: vw(24px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
+
+        &__pink {
+            color: #E056BA;
+        }
+    }
+    
+    &-aboutSlideText {
+        font-family: 'Roboto Flex', sans-serif;
+        font-weight: 500;
+        color: #101010;
+
+        font-size: vw(20px, 430px);
+        line-height: vw(28px, 430px);
+
+        @media screen and (min-width: 526px) {
+            font-size: vw(20px, 744px);
+            line-height: vw(28px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            font-size: vw(20px);
+            line-height: vw(28px);
+            margin-bottom: vw(64px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            font-size: 20px;
+            line-height: 28px;
+            margin-bottom: 64px;
+        }
+    }
+    
+    &-aboutSlideArrow {
+        display: none;
+        vertical-align: bottom;
+        cursor: pointer;
+        
+        @media screen and (min-width: 921px) {
+            display: block;
+            width: vw(104px);
+            height: vw(28px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            width: 104px;
+            height: 28px;
+        }
+
+        &__mob {
+            display: block;
+            position: static;
+
+            @media screen and (min-width: 526px) {
+                
+            }
+            
+            @media screen and (min-width: 921px) {
+                display: none;
+            }
+        }
+    }
+}

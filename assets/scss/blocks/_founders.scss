@@ -1,0 +1,187 @@
+.wp-block-lazyblock-founders {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+    &-founders {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        gap: vw(28px, 430px);
+
+        @media screen and (min-width: 526px) {
+            gap: vw(28px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            gap: unset;
+        }
+        
+        @media screen and (min-width: 1440px) {
+            
+        }
+
+        &_list {
+            display: flex;
+            flex-direction: row;
+            width: 100vw;
+            overflow-x: auto;
+
+            transform: translateX(vw(-21px, 430px));
+            padding: 0px vw(21px, 430px);
+            gap: vw(21px, 430px);
+
+            @media screen and (min-width: 526px) {
+                transform: translateX(vw(-21px, 744px));
+                padding: 0px vw(21px, 744px);
+                gap: vw(21px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                width: 100%;
+                transform: none;
+                padding: 0px;
+                flex-direction: column;
+                gap: vw(70px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                gap: 70px;
+            }
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &_dots {
+            @media screen and (min-width: 921px) {
+                display: none;
+            }
+        }
+    }
+    
+    &-founder {
+        display: flex;
+        flex-direction: column;
+
+        gap: vw(36px, 430px);
+
+        @media screen and (min-width: 526px) {
+            gap: vw(36px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            flex-direction: row;
+            justify-content: center;
+            gap: vw(125px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            gap: 125px;
+        }
+
+        &__rev {
+            @media screen and (min-width: 921px) {
+                flex-direction: row-reverse;
+            }
+        }
+    
+        &_image {
+            vertical-align: bottom;
+            object-fit: cover;
+            
+            width: vw(388px, 430px);
+            height: vw(467px, 430px);
+            border-radius: vw(16px, 430px);
+
+            @media screen and (min-width: 526px) {
+                width: vw(388px, 744px);
+                height: vw(467px, 744px);
+                border-radius: vw(16px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                width: vw(429px);
+                height: vw(477px);
+                border-radius: vw(16px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                width: 429px;
+                height: 477px;
+                border-radius: 16px;
+            }
+        }
+        
+        &_content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            gap: vw(24px, 430px);
+
+            @media screen and (min-width: 526px) {
+                gap: vw(24px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                gap: vw(24px);
+                width: vw(540px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                gap: 24px;
+                width: 540px;
+            }
+        }
+    }
+    
+    &-founderName {
+        font-family: 'Roboto Flex', sans-serif;
+        font-weight: 600;
+        color: #E056BA;
+
+        font-size: vw(32px, 430px);
+
+        @media screen and (min-width: 526px) {
+            font-size: vw(32px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            font-size: vw(32px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            font-size: 32px;
+        }
+    }
+    
+    &-founderText {
+        font-family: 'Roboto Flex', sans-serif;
+        font-weight: 500;
+        color: #101010;
+        
+        font-size: vw(20px, 430px);
+
+        @media screen and (min-width: 526px) {
+            font-size: vw(20px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            font-size: vw(20px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            font-size: 20px;
+        }
+    }
+}

@@ -1,0 +1,216 @@
+.wp-block-lazyblock-simple-banner {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+    &-simpleBanner {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        width: vw(388px, 430px);
+        height: vw(540px, 430px);
+        border-radius: vw(16px, 430px);
+        padding: vw(40px, 430px) vw(20px, 430px);
+        gap: vw(22px, 430px);
+
+        @media screen and (min-width: 526px) {
+            width: vw(702px, 744px);
+            height: vw(540px, 744px);
+            border-radius: vw(16px, 744px);
+            padding: vw(40px, 744px) vw(20px, 744px);
+            gap: vw(22px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            width: vw(1313px);
+            height: vw(418px);
+            border-radius: vw(16px);
+            padding: vw(64px) vw(110px);
+            gap: vw(30px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            width: 1313px;
+            height: 418px;
+            border-radius: 16px;
+            padding: 64px 110px;
+            gap: 30px;
+        }
+
+        &_background {
+            position: absolute;
+            object-fit: cover;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+
+            @media screen and (min-width: 526px) {
+                
+            }
+            
+            @media screen and (min-width: 921px) {
+                
+            }
+            
+            @media screen and (min-width: 1440px) {
+                
+            }
+        }
+
+        &_title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            font-family: 'Roboto Flex', sans-serif;
+            color: #ffffff;
+            font-weight: 600;
+            width: fit-content;
+            z-index: 1;
+
+            font-size: vw(20px, 430px);
+
+            @media screen and (min-width: 526px) {
+                font-size: vw(20px, 744px);
+            }
+
+            @media screen and (min-width: 921px) {
+                font-size: vw(32px);
+            }
+
+            @media screen and (min-width: 1440px) {
+                font-size: 32px;
+            }
+
+            &::before {
+                content: ' ';
+                position: absolute;
+                width: 100%;
+                border-radius: 100%;
+                border: solid #FF92E0;
+                display: none;
+                transform: rotate(3deg);
+                z-index: 1;
+
+                @media screen and (min-width: 921px) {
+                    display: block;
+                    
+                    height: vw(74px);
+                    border-width: vw(1px);
+                }
+    
+                @media screen and (min-width: 1440px) {
+                    border-width: 1px;
+                    height: 74px;
+                }
+            }
+        }
+
+        &_text {
+            font-family: 'Roboto Flex', sans-serif;
+            color: #ffffff;
+            font-weight: 500;
+            z-index: 1;
+
+            font-size: vw(16px, 430px);
+
+            @media screen and (min-width: 526px) {
+                width: vw(400px, 744px);
+                font-size: vw(16px, 744px);
+            }
+
+            @media screen and (min-width: 921px) {
+                width: vw(612px);
+                font-size: vw(23px);
+            }
+
+            @media screen and (min-width: 1440px) {
+                width: 612px;
+                font-size: 23px;
+            }
+
+        }
+
+        &_shape {
+            position: absolute;
+            z-index: 0;
+            
+            top: vw(220px, 430px);
+            left: vw(-20px, 430px);
+            width: vw(560px, 430px);
+            height: vw(480px, 430px);
+
+            @media screen and (min-width: 526px) {
+                top: vw(140px, 744px);
+                left: vw(160px, 744px);
+                width: vw(566px, 744px);
+                height: vw(558px, 744px);
+            }
+
+            @media screen and (min-width: 921px) {
+                top: vw(25px);
+                left: vw(737px);
+                width: vw(566px);
+                height: vw(558px);
+            }
+
+            @media screen and (min-width: 1440px) {
+                top: 25px;
+                left: 737px;
+                width: 566px;
+                height: 558px;
+            }
+
+        }
+
+        &_image {
+            position: absolute;
+            z-index: 0;
+            mask-image: url(/wp-content/themes/Beflex/assets/imgs/about_banner_shape.svg);
+            mask-size: cover;
+            mask-position: center bottom;
+            object-fit: cover;
+            
+            top: vw(210px, 430px);
+            left: vw(40px, 430px);
+            width: vw(460px, 430px);
+            height: vw(370px, 430px);
+
+            @media screen and (min-width: 526px) {
+                top: vw(120px, 744px);
+                left: vw(240px, 744px);
+                width: vw(530px, 744px);
+                height: vw(421px, 744px);
+            }
+
+            @media screen and (min-width: 921px) {
+                top: vw(24px);
+                left: vw(760px);
+                width: vw(530px);
+                height: vw(421px);
+            }
+
+            @media screen and (min-width: 1440px) {
+                top: 24px;
+                left: 760px;
+                width: 530px;
+                height: 421px;
+            }
+
+        }
+
+    }
+}

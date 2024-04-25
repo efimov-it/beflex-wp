@@ -1,0 +1,184 @@
+.wp-block-lazyblock-franchize-steps {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+
+    &-franchizeStepsWrapper {
+        display: flex;
+        flex-direction: column;
+
+        gap: vw(60px, 430px);
+        margin-bottom: vw(80px, 430px);
+
+        @media screen and (min-width: 526px) {
+            gap: vw(60px, 744px);
+            margin-bottom: vw(80px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            margin-bottom: 0px;
+            gap: vw(40px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            gap: 40px;
+        }
+    }
+
+    &-franchizeStepsButton {
+        align-self: center;
+
+        width: vw(308px, 430px);
+
+        @media screen and (min-width: 526px) {
+            width: vw(308px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            width: vw(308px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            width: 308px;
+        }
+    }
+    
+    &-franchizeSteps {
+        display: flex;
+        flex-direction: column;
+
+        gap: vw(32px, 430px);
+
+        @media screen and (min-width: 526px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        
+            gap: vw(32px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            gap: vw(32px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            gap: 32px;
+        }
+    
+        &_step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin: 0px auto;
+
+            width: vw(236px, 430px);
+            height: vw(240px, 430px);
+            border-radius: vw(24px, 430px);
+            gap: vw(12px, 430px);
+            padding: vw(64px, 430px) vw(24px, 430px) vw(24px, 430px);
+
+            @media screen and (min-width: 526px) {
+                width: vw(236px, 744px);
+                height: vw(240px, 744px);
+                border-radius: vw(24px, 744px);
+                gap: vw(12px, 744px);
+                padding: vw(64px, 744px) vw(24px, 744px) vw(24px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                margin: 0px;
+                width: vw(236px);
+                height: vw(240px);
+                border-radius: vw(24px);
+                gap: vw(12px);
+                padding: vw(64px) vw(24px) vw(24px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                width: 236px;
+                height: 240px;
+                border-radius: 24px;
+                gap: 12px;
+                padding: 64px 24px 24px;
+            }
+
+            &::before {
+                content: ' ';
+                position: absolute;
+                width: inherit;
+                height: inherit;
+                left: 0px;
+                top: 0px;
+                z-index: -1;
+                background: #E056BA;
+            }
+
+            &__last {
+                justify-content: center;
+                padding-top: 0px;
+                padding-bottom: 0px;
+            }
+        }
+    }
+    
+    &-franchizeStepImage {
+        position: absolute;
+        z-index: -1;
+        width: inherit;
+        height: inherit;
+        left: 0px;
+        top: 0px;
+    }
+    
+    &-franchizeStepNumber {
+        font-family: 'Roboto Flex', sans-serif;
+        color: #ffffff;
+        font-weight: 800;
+        text-align: center;
+
+        font-size: vw(24px, 430px);
+
+        @media screen and (min-width: 526px) {
+            font-size: vw(24px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            font-size: vw(24px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            font-size: 24px;
+        }
+    }
+    
+    &-franchizeStepText {
+        font-family: 'Roboto Flex', sans-serif;
+        color: #ffffff;
+        font-weight: 800;
+        text-align: center;
+        text-transform: uppercase;
+
+        font-size: vw(16px, 430px);
+
+        @media screen and (min-width: 526px) {
+            font-size: vw(16px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            font-size: vw(16px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            font-size: 16px;
+        }
+    }
+}

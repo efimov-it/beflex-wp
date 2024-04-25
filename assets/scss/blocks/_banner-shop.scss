@@ -1,0 +1,201 @@
+.wp-block-lazyblock-banner-shop {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+    &-shopBanner {
+        position: relative;
+        width: 100%;
+
+        height: vw(651px, 430px);
+
+        @media screen and (min-width: 526px) {
+            height: vw(651px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            height: vw(701px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            height: 701px;
+        }
+
+        &_bgImage {
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            left: 0px;
+            top: 0px;
+            z-index: 0;
+            object-fit: cover;
+            display: none;
+            vertical-align: bottom;
+
+            @media screen and (min-width: 526px) {
+                
+            }
+            
+            @media screen and (min-width: 921px) {
+                display: block;
+            }
+            
+            @media screen and (min-width: 1440px) {
+                
+            }
+
+            &__mobile {
+                display: block;
+
+                @media screen and (min-width: 526px) {
+                    
+                }
+                
+                @media screen and (min-width: 921px) {
+                    display: none;
+                }
+            }
+        }
+
+        &_image {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            object-fit: cover;
+            vertical-align: bottom;
+
+            @media screen and (min-width: 526px) {
+                
+            }
+            
+            @media screen and (min-width: 921px) {
+                display: block;
+                top: 0px;
+                width: vw(664px);
+                height: vw(701px);
+                left: calc(50% - #{vw(720px)});
+            }
+            
+            @media screen and (min-width: 1440px) {
+                width: 664px;
+                height: 701px;
+                left: calc(50% - 720px);
+            }
+
+            &__mobile {
+                display: block;
+                left: 0px;
+                bottom: 0px;
+
+                width: vw(326px, 430px);
+                height: vw(429px, 430px);
+
+                @media screen and (min-width: 526px) {
+                    width: vw(326px, 744px);
+                    height: vw(429px, 744px);
+                }
+                
+                @media screen and (min-width: 921px) {
+                    display: none;
+                }
+            }
+        }
+        
+        &_shape1 {
+            position: absolute;
+            z-index: 3;
+
+            top: vw(37px, 430px);
+            right: vw(-139px, 430px);
+            width: vw(508px, 430px);
+            height: vw(202px, 430px);
+
+            @media screen and (min-width: 526px) {
+                top: vw(37px, 744px);
+                right: vw(-139px, 744px);
+                width: vw(508px, 744px);
+                height: vw(202px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                width: vw(655px);
+                height: vw(260px);
+                top: vw(126px);
+                right: calc(50% - #{vw(802px)});
+            }
+            
+            @media screen and (min-width: 1440px) {
+                width: 655px;
+                height: 260px;
+                top: 126px;
+                right: calc(50% - 802px);
+            }
+        }
+        
+        &_shape2 {
+            display: none;
+            position: absolute;
+            z-index: 3;
+            
+            @media screen and (min-width: 921px) {
+                display: block;
+                
+                top: vw(14px);
+                left: calc(50% - #{vw(982px)});
+                width: vw(996px);
+                height: vw(616px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                top: 14px;
+                left: calc(50% - 982px);
+                width: 996px;
+                height: 616px;
+            }
+        }
+
+        &_text {
+            position: absolute;
+            font-family: 'Yeseva One', serif;
+            font-weight: 400;
+            color: #242424;
+            line-height: 140%;
+            z-index: 4;
+            text-align: right;
+            text-transform: uppercase;
+
+            top: vw(110px, 430px);
+            right: vw(24px, 430px);
+            left: vw(24px, 430px);
+            font-size: vw(40px, 430px);
+
+            @media screen and (min-width: 526px) {
+                top: vw(110px, 744px);
+                right: vw(24px, 744px);
+                left: vw(24px, 744px);
+                font-size: vw(40px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                width: auto;
+                top: vw(225px);
+                right: calc(50% - #{vw(656px)});
+                left: auto;
+                font-size: vw(60px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                top: 225px;
+                right: calc(50% - 656px);
+                font-size: 60px;
+            }
+        }
+    }
+}

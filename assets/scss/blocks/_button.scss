@@ -1,0 +1,114 @@
+.wp-block-lazyblock-beflex-knopka {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf- {
+    &button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background: #E056BA;
+        border: solid #E056BA;
+        width: max-content;
+        text-decoration: none;
+        border-width: 0px;
+        cursor: pointer;
+        outline: none;
+
+        transition: background 0.3s ease-in-out,
+                    border 0.3s ease-in-out;
+    
+        height: vw(64px, 430px);
+        padding: 0px vw(15px, 430px);
+        border-radius: vw(10px, 430px);
+        min-width: vw(200px, 430px);
+
+        @media screen and (min-width: 526px) {
+            height: vw(64px, 744px);
+            padding: 0px vw(15px, 744px);
+            border-radius: vw(10px, 744px);
+            min-width: vw(200px, 744px);
+        }
+    
+        @media screen and (min-width: 921px) {
+            height: vw(64px);
+            padding: 0px vw(15px);
+            border-radius: vw(10px);
+            min-width: vw(200px);
+        }
+    
+        @media screen and (min-width: 1440px) {
+            height: 64px;
+            padding: 0px 15px;
+            border-radius: 10px;
+            min-width: 200px;
+        }
+
+        &__outline {
+            background: #ffffff;
+    
+            border-width: vw(1px, 430px);
+
+            @media screen and (min-width: 526px) {
+                border-width: vw(1px, 744px);
+            }
+        
+            @media screen and (min-width: 921px) {
+                border-width: vw(1px);
+            }
+        
+            @media screen and (min-width: 1440px) {
+                border-width: 1px;
+            }
+        }
+
+        &__white {
+            background: #ffffff;
+        }
+
+        &:hover {
+            background: #E056BA;
+        }
+        
+        &_text {
+            font-family: Inter, sans-serif;
+            color: #ffffff;
+            line-height: 140%;
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+            
+            transition: color 0.3s ease-in-out;
+    
+            font-size: vw(16px, 430px);
+    
+            @media screen and (min-width: 526px) {
+                font-size: vw(16px, 744px);
+            }
+        
+            @media screen and (min-width: 921px) {
+                font-size: vw(16px);
+            }
+        
+            @media screen and (min-width: 1440px) {
+                font-size: 16px;
+            }
+        }
+
+        &__outline &_text, &__white &_text{
+            color: #E056BA;
+        }
+        
+        &:hover &_text {
+            color: #ffffff;
+        }
+    }
+}

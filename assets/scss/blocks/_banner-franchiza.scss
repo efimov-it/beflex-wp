@@ -1,0 +1,139 @@
+.wp-block-lazyblock-banner-franchiza {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+    &-franchizeBannerContent {
+        @media screen and (max-width: 525px) {
+            top: vw(140px, 430px);
+        }
+        @media screen and (min-width: 526px) and (max-width: 920px) {
+            top: vw(140px, 744px);
+        }
+    }
+
+    &-franchizeRating {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        z-index: 3;
+        left: 0px;
+        overflow-x: auto;
+        width: 100vw;
+
+        bottom: vw(32px, 430px);
+        gap: vw(16px, 744px);
+        padding: 0px vw(21px, 430px);
+
+        @media screen and (min-width: 526px) {
+            bottom: vw(32px, 744px);
+            gap: vw(16px, 744px);
+            padding: 0px vw(21px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            width: auto;;
+            left: calc(50% - #{vw(660px)});
+            bottom: vw(32px);
+            gap: vw(32px);
+            padding: 0px;
+        }
+        
+        @media screen and (min-width: 1440px) {
+            left: calc(50% - 660px);
+            bottom: 32px;
+            gap: 32px;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    
+        &_item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            background: #E4EDEE;
+
+            width: vw(192px, 430px);
+            height: vw(192px, 430px);
+            padding: vw(12px, 430px) vw(8px, 430px);
+            border-radius: vw(16px, 430px);
+
+            @media screen and (min-width: 526px) {
+                width: vw(192px, 744px);
+                height: vw(192px, 744px);
+                padding: vw(12px, 744px) vw(8px, 744px);
+                border-radius: vw(16px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                width: vw(212px);
+                height: vw(212px);
+                padding: vw(16px) vw(12px);
+                border-radius: vw(16px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                width: 212px;
+                height: 212px;
+                padding: 16px 12px;
+                border-radius: 16px;
+            }
+        }
+    }
+    
+    &-franchizeRatingLogo {
+        vertical-align: bottom;
+        object-fit: contain;
+
+        width: vw(172px, 430px);
+        height: vw(100px, 430px);
+
+        @media screen and (min-width: 526px) {
+            width: vw(172px, 744px);
+            height: vw(100px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            width: vw(180px);
+            height: vw(120px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            width: 180px;
+            height: 120px;
+        }
+    }
+    
+    &-franchizeRatingText {
+        font-family: 'Roboto Flex', sans-serif;
+        font-weight: 400;
+        color: #101010;
+        text-align: center;
+        text-transform: uppercase;
+
+        font-size: vw(12px, 430px);
+
+        @media screen and (min-width: 526px) {
+            font-size: vw(12px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            font-size: vw(12px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            font-size: 12px;
+        }
+    }
+}

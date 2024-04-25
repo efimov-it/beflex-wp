@@ -1,0 +1,570 @@
+.bf {
+    
+    &-modals {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+
+        @media screen and (min-width: 526px) {
+            
+        }
+        
+        @media screen and (min-width: 921px) {
+            
+        }
+        
+        @media screen and (min-width: 1440px) {
+            
+        }
+
+        &_bg {
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background: #181818;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+
+            &__shown {
+                opacity: 0.38;
+            }
+        }
+    }
+
+    &-modalWrapper {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-height: 90vh;
+        overflow: hidden;
+        z-index: 0;
+
+        transition: opacity 0.3s ease-in-out,
+                    transform 0.3s ease-in-out;
+        opacity: 0;
+        transform: translateY(100%);
+
+        border-radius: vw(36px, 430px);
+        max-width: vw(375px, 430px);
+
+        @media screen and (min-width: 526px) {
+            border-radius: vw(36px, 744px);
+            max-width: vw(664px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            border-radius: vw(36px);
+            max-width: vw(664px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            border-radius: 36px;
+            max-width: 664px;
+        }
+        
+
+        &__shown {
+            z-index: 1;
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    &-modal {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+        overflow-y: auto;
+        max-width: inherit;
+        max-height: inherit;
+
+        padding: vw(44px, 430px) vw(32px, 430px) vw(32px, 430px);
+
+        @media screen and (min-width: 526px) {
+            padding: vw(44px, 744px) vw(32px, 744px) vw(32px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            padding: vw(60px) vw(52px) vw(48px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            padding: 60px 52px 48px;
+        }
+
+        
+        &::-webkit-scrollbar {
+
+            width: vw(8px, 430px);
+            height: vw(8px, 430px);
+
+            @media screen and (min-width: 526px) {
+                width: vw(8px, 744px);
+                height: vw(8px, 744px);
+            }
+
+            @media screen and (min-width: 921px) {
+                width: vw(8px);
+                height: vw(8px);
+            }
+
+            @media screen and (min-width: 1440px) {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background: #cfcfcf;
+            border: solid #ffffff;
+            
+            border-radius: vw(40px, 430px);
+            border-radius: vw(100px, 430px);
+            border-width: vw(36px, 430px) vw(8px, 430px) vw(36px, 430px) vw(8px, 430px);
+
+            @media screen and (min-width: 526px) {
+                border-radius: vw(40px, 744px);
+                border-radius: vw(100px, 744px);
+                border-width: vw(36px, 744px) vw(8px, 744px) vw(36px, 744px) vw(8px, 744px);
+            }
+
+            @media screen and (min-width: 921px) {
+                border-radius: vw(40px);
+                border-radius: vw(100px);
+                border-width: vw(36px) vw(8px) vw(36px) vw(8px);
+            }
+
+            @media screen and (min-width: 1440px) {
+                border-radius: 40px;
+                border-radius: 100px;
+                border-width: 36px 8px 36px 8px;
+            }
+        }
+
+        &_close {
+            position: absolute;
+            vertical-align: bottom;
+            cursor: pointer;
+
+            right: vw(12px, 430px);
+            top: vw(12px, 430px);
+            width: vw(32px, 430px);
+            height: vw(32px, 430px);
+
+            @media screen and (min-width: 526px) {
+                right: vw(22px, 744px);
+                top: vw(22px, 744px);
+                width: vw(50px, 744px);
+                height: vw(50px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                right: vw(22px);
+                top: vw(22px);
+                width: vw(50px);
+                height: vw(50px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                right: 22px;
+                top: 22px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        &_title {
+            font-family: 'Roboto Flex';
+            text-transform: uppercase;
+            text-align: center;
+            color: #101010;
+            font-weight: 500;
+
+            font-size: vw(38px, 430px);
+            margin-bottom: vw(32px, 430px);
+
+            @media screen and (min-width: 526px) {
+                font-size: vw(38px, 744px);
+                margin-bottom: vw(32px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                font-size: vw(38px);
+                margin-bottom: vw(32px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                font-size: 38px;
+                margin-bottom: 32px;
+            }
+        }
+        
+        &_text {
+            font-family: 'Roboto Flex';
+            text-transform: lowercase;
+            text-align: center;
+            color: #101010;
+
+            font-size: vw(16px, 430px);
+            margin-bottom: vw(32px, 430px);
+
+            @media screen and (min-width: 526px) {
+                font-size: vw(16px, 744px);
+                margin-bottom: vw(32px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                font-size: vw(16px);
+                margin-bottom: vw(32px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                font-size: 16px;
+                margin-bottom: 32px;
+            }
+        }
+
+        &_form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+
+            gap: vw(16px, 430px);
+
+            @media screen and (min-width: 526px) {
+                gap: vw(16px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                gap: vw(16px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                gap: 16px;
+            }
+        }
+
+        &__feedback, &__error {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            width: vw(375px, 430px);
+
+            @media screen and (min-width: 526px) {
+                width: vw(667px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                width: vw(667px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                width: 667px;
+            }
+        }
+    }
+    
+    &-modalFormInput {
+        width: 100%;
+
+        @media screen and (min-width: 526px) {
+            
+        }
+        
+        @media screen and (min-width: 921px) {
+            
+        }
+        
+        @media screen and (min-width: 1440px) {
+            
+        }
+    }
+    
+    &-modalFormCheckBox {
+        width: 100%;
+
+        @media screen and (min-width: 526px) {
+            
+        }
+        
+        @media screen and (min-width: 921px) {
+            
+        }
+        
+        @media screen and (min-width: 1440px) {
+            
+        }
+    }
+    
+    &-modalButton {
+        width: 100%;
+        margin-top: vw(32px, 430px);
+
+        @media screen and (min-width: 526px) {
+            width: vw(248px, 744px);
+            margin-top: vw(32px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            width: vw(248px);
+            margin-top: vw(32px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            width: 248px;
+            margin-top: 32px;
+        }
+    }
+
+    
+    &-modalList {
+        display: flex;
+        flex-direction: column;
+
+        gap: vw(24px, 430px);
+
+        @media screen and (min-width: 526px) {
+            gap: vw(24px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            gap: vw(24px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            gap: 24px;
+        }
+    
+        &_item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border: solid #E056BA;
+            overflow: hidden;
+
+            transition: background 0.3s ease-in-out;
+            
+            padding: vw(16px, 430px) vw(20px, 430px);
+            border-radius: vw(12px, 430px);
+            border-width: vw(1px, 430px);
+            gap: vw(4px, 430px);
+
+            @media screen and (min-width: 526px) {
+                padding: vw(16px, 744px) vw(20px, 744px);
+                border-radius: vw(12px, 744px);
+                border-width: vw(1px, 744px);
+                gap: vw(4px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                padding: vw(16px) vw(20px);
+                border-radius: vw(12px);
+                border-width: vw(1px);
+                gap: vw(4px);
+
+                &:hover {
+                    background: #E056BA;
+                }
+            }
+            
+            @media screen and (min-width: 1440px) {
+                padding: 16px 20px;
+                border-radius: 12px;
+                border-width: 1px;
+                gap: 4px;
+            }
+
+            &:active {
+                background: #E056BA;
+            }
+        }
+    }
+    
+    &-modalList_item:hover > &-modalListItemTitle,
+    &-modalList_item:hover > &-modalListItemText  {
+        @media screen and (min-width: 921px) {
+            color: #ffffff;   
+        }
+    }
+    
+    &-modalList_item:active > &-modalListItemTitle,
+    &-modalList_item:active > &-modalListItemText  {
+        color: #ffffff;
+    }
+
+
+    &-modalListItemTitle {
+        font-family: 'Roboto Flex', sans-serif;
+        font-weight: 600;
+        line-height: 140%;
+        color: #E056BA;
+        text-transform: uppercase;
+        transition: color 0.3s ease-in-out;
+
+        font-size: vw(24px, 430px);
+
+        @media screen and (min-width: 526px) {
+            font-size: vw(24px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            font-size: vw(24px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            font-size: 24px;
+        }
+    }
+    
+    &-modalListItemText {
+        font-family: 'Roboto Flex', sans-serif;
+        font-weight: 600;
+        line-height: 140%;
+        color: #313131;
+        text-transform: uppercase;
+        transition: color 0.3s ease-in-out;
+
+        font-size: vw(16px, 430px);
+
+        @media screen and (min-width: 526px) {
+            font-size: vw(16px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            font-size: vw(16px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            font-size: 16px;
+        }
+    }
+    
+    &-modalListItemLink {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+
+        @media screen and (min-width: 526px) {
+            
+        }
+        
+        @media screen and (min-width: 921px) {
+            
+        }
+        
+        @media screen and (min-width: 1440px) {
+            
+        }
+    }
+
+    &-modalLegal_text {
+        font-family: 'Roboto Flex', sans-serif;
+        font-weight: 400;
+        
+        font-size: vw(20px, 430px);
+        line-height: vw(28px, 430px);
+
+        @media screen and (min-width: 526px) {
+            font-size: vw(20px, 744px);
+            line-height: vw(28px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            font-size: vw(20px);
+            line-height: vw(28px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: vw(8px, 430px);
+
+            @media screen and (min-width: 526px) {
+                margin-bottom: vw(8px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                margin-bottom: vw(8px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                margin-bottom: 8px;
+            }
+        }
+
+        strong {
+            font-weight: 600;
+        }
+    }
+
+    &-modalDoneImg {
+        position: absolute;
+        vertical-align: bottom;
+        z-index: 0;
+
+        width: vw(306px, 430px);
+        height: vw(313px, 430px);
+
+        @media screen and (min-width: 526px) {
+            width: vw(553px, 744px);
+            height: vw(580px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            width: vw(553px);
+            height: vw(580px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            width: 553px;
+            height: 580px;
+        }
+    }
+    
+    &-modalDoneText {
+        z-index: 1;
+        font-family: 'Roboto Flex', sans-serif;
+        color: #101010;
+        font-weight: 500;
+        text-align: center;
+        text-transform: uppercase;
+
+        font-size: vw(38px, 430px);
+        padding: vw(200px, 430px) 0px;
+
+        @media screen and (min-width: 526px) {
+            font-size: vw(38px, 744px);
+            padding: vw(200px, 744px) 0px;
+        }
+        
+        @media screen and (min-width: 921px) {
+            font-size: vw(38px);
+            padding: vw(156px) 0px;
+        }
+        
+        @media screen and (min-width: 1440px) {
+            font-size: 38px;
+            padding: 156px 0px;
+        }
+    }
+}

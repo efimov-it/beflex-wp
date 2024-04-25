@@ -1,0 +1,181 @@
+.wp-block-lazyblock-beflex-app {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+    &-appBanner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        margin: 0px auto;
+        z-index: 1;
+
+        border-radius: vw(16px, 430px);
+        width: vw(388px, 430px);
+        height: vw(540px, 430px);
+        padding: vw(64px, 430px) 0px;
+
+        @media screen and (min-width: 526px) {
+            border-radius: vw(16px, 744px);
+            width: vw(702px, 744px);
+            height: vw(540px, 744px);
+            padding: vw(64px, 744px) 0px;
+        }
+        
+        @media screen and (min-width: 921px) {
+            flex-direction: row;
+            border-radius: vw(16px);
+            width: vw(1316px);
+            height: vw(200px);
+            padding: 0px;
+        }
+        
+        @media screen and (min-width: 1440px) {
+            border-radius: 16px;
+            width: 1316px;
+            height: 200px;
+        }
+
+        &_bg {
+            display: none;
+            position: absolute;
+            z-index: -1;
+            object-fit: cover;
+            width: inherit;
+            height: inherit;
+            left: 0px;
+            top: 0px;
+            vertical-align: bottom;
+
+            @media screen and (min-width: 526px) {
+                
+            }
+            
+            @media screen and (min-width: 921px) {
+                display: block;
+            }
+            
+            @media screen and (min-width: 1440px) {
+                
+            }
+
+            &__mob {
+                display: block;
+
+                @media screen and (min-width: 526px) {
+                    
+                }
+                
+                @media screen and (min-width: 921px) {
+                    display: none;
+                }
+            }
+        }
+
+        &_text {
+            display: flex;
+            flex-direction: row;
+            background: #ffffff;
+            font-family: 'Roboto Flex', sans-serif;
+            color: #E056BA;
+            font-weight: 600;
+            text-transform: lowercase;
+            margin-right: auto;
+            
+            padding: vw(12px, 430px) vw(64px, 430px) vw(12px, 430px) vw(20px, 430px);
+            border-radius: 0px vw(300px, 430px) vw(300px, 430px) 0px;
+            font-size: vw(32px, 430px);
+            width: vw(360px, 430px);
+
+            @media screen and (min-width: 526px) {
+                padding: vw(12px, 744px) vw(64px, 744px) vw(12px, 744px) vw(20px, 744px);
+                border-radius: 0px vw(300px, 744px) vw(300px, 744px) 0px;
+                font-size: vw(32px, 744px);
+                width: vw(360px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                margin: 0px;
+                padding: vw(8px) vw(64px) vw(8px) vw(110px);
+                border-radius: 0px vw(300px) vw(300px) 0px;
+                font-size: vw(32px);
+                width: vw(500px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                padding: 8px 64px 8px 110px;
+                border-radius: 0px 300px 300px 0px;
+                font-size: 32px;
+                width: 500px;
+            }
+        }
+
+        &_links {
+            display: flex;
+            flex-direction: column;
+
+            gap: vw(20px, 430px);
+
+            @media screen and (min-width: 526px) {
+                gap: vw(20px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                padding-right: vw(100px);
+                gap: vw(12px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                padding-right: 100px;
+                gap: 12px;
+            }
+        }
+    }
+
+    &-appBannerLink {
+
+        @media screen and (min-width: 526px) {
+            
+        }
+        
+        @media screen and (min-width: 921px) {
+            
+        }
+        
+        @media screen and (min-width: 1440px) {
+            
+        }
+
+        &_img {
+            vertical-align: bottom;
+
+            width: vw(182px, 430px);
+            height: vw(52px, 430px);
+
+            @media screen and (min-width: 526px) {
+                width: vw(260px, 744px);
+                height: vw(76px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                width: vw(122px);
+                height: vw(36px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                width: 122px;
+                height: 36px;
+            }
+        }
+    }
+}

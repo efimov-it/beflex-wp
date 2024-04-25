@@ -1,0 +1,187 @@
+.wp-block-lazyblock-faq {
+    max-width: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+
+    & .lzb-content-title {
+        display: none;
+    }
+}
+
+.bf {
+    &-faq {
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+
+        border-radius: vw(16px, 430px);
+
+        @media screen and (min-width: 526px) {
+            border-radius: vw(16px, 744px);
+        }
+
+        @media screen and (min-width: 921px) {
+            border-radius: vw(16px);
+        }
+
+        @media screen and (min-width: 1440px) {
+            border-radius: 16px;
+        }
+
+        &_question:not(:last-child) {
+            border-bottom: solid #CFCFCF;
+
+            border-bottom-width: vw(1px, 430px);
+
+            @media screen and (min-width: 526px) {
+                border-bottom-width: vw(1px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                border-bottom-width: vw(1px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                border-bottom-width: 1px;
+            }
+        }
+    }
+
+    &-faqQuestion {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-width: 526px) {
+            
+        }
+
+        @media screen and (min-width: 921px) {
+            
+        }
+
+        @media screen and (min-width: 1440px) {
+            
+        }
+
+        &_header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+
+            padding: vw(24px, 430px) 0px;
+
+            @media screen and (min-width: 526px) {
+                padding: vw(24px, 744px) 0px;
+            }
+    
+            @media screen and (min-width: 921px) {
+                padding: vw(24px) vw(24px) vw(24px) vw(60px);
+            }
+    
+            @media screen and (min-width: 1440px) {
+                padding: 24px 24px 24px 60px;
+            }
+        }
+
+        &_answer {
+            transition: max-height 0.3s ease-in-out,
+                        padding 0.3s ease-in-out;
+            font-family: 'Roboto Flex', sans-serif;
+            overflow: hidden;
+            max-height: 0px;
+
+            padding: 0px vw(12px, 430px);
+            font-size: vw(20px, 430px);
+
+            @media screen and (min-width: 526px) {
+                padding: 0px vw(12px, 744px);
+                font-size: vw(20px, 744px);
+            }
+    
+            @media screen and (min-width: 921px) {
+                padding: 0px vw(60px);
+                font-size: vw(20px);
+            }
+    
+            @media screen and (min-width: 1440px) {
+                padding: 0px 60px;
+                font-size: 20px;
+            }
+        }
+
+        &_header__open + &_answer {
+            padding: 0px vw(12px, 430px) vw(36px, 430px);
+            max-height: vw(700px, 430px);
+
+            @media screen and (min-width: 526px) {
+                padding: 0px vw(12px, 744px) vw(36px, 744px);
+                max-height: vw(500px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                padding: vw(12px) vw(60px) vw(48px) vw(60px);
+                max-height: vw(200px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                padding: 12px 60px 48px 60px;
+                max-height: 200px;
+            }
+        }
+    }
+
+    &-faqQuestionText {
+        font-family: 'Roboto Flex', sans-serif;
+        font-weight: 500;
+        color: #101010;
+        text-transform: uppercase;
+
+        font-size: vw(20px, 430px);
+        line-height: vw(30px, 430px);
+
+        @media screen and (min-width: 526px) {
+            font-size: vw(20px, 744px);
+            line-height: vw(30px, 744px);
+        }
+
+        @media screen and (min-width: 921px) {
+            font-size: vw(20px);
+            line-height: auto;
+        }
+
+        @media screen and (min-width: 1440px) {
+            font-size: 20px;
+        }
+    }
+
+    &-faqQuestionIcon {
+        transition: transform 0.3s ease-in-out;
+        transform: rotate(45deg);
+        vertical-align: bottom;
+
+        width: vw(20px, 430px);
+        height: vw(20px, 430px);
+
+        @media screen and (min-width: 526px) {
+            width: vw(20px, 744px);
+            height: vw(20px, 744px);
+        }
+
+        @media screen and (min-width: 921px) {
+            width: vw(20px);
+            height: vw(20px);
+        }
+
+        @media screen and (min-width: 1440px) {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    
+    &-faqQuestion_header__open > &-faqQuestionIcon{
+        transform: rotate(0deg);
+    }
+}
