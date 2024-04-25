@@ -870,12 +870,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!currentModal) {
                 const hasShown = localStorage.getItem('modalTimer');
                 if (!hasShown) {
-                    localStorage.setItem('modalTimer', new Date().getTime() + (3.5 * 60 * 1000));
+                    localStorage.setItem('modalTimer', new Date().getTime() + (5 * 60 * 1000));
                     showModal('.bf-modal__callback');
                 }
                 else {
                     if (new Date().getTime() > hasShown) {
-                        localStorage.setItem('modalTimer', new Date().getTime() + (3.5 * 60 * 1000));
+                        localStorage.setItem('modalTimer', new Date().getTime() + (5 * 60 * 1000));
                         showModal('.bf-modal__callback');
                     }
                 }
@@ -883,7 +883,7 @@ document.addEventListener("DOMContentLoaded", () => {
             else {
                 showPromoModal();
             }
-        }, 7000);
+        }, 60000);
     }
 
     showPromoModal();
