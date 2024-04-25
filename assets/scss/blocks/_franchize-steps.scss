@@ -15,11 +15,9 @@
         display: flex;
         flex-direction: column;
 
-        gap: vw(60px, 430px);
         margin-bottom: vw(80px, 430px);
 
         @media screen and (min-width: 526px) {
-            gap: vw(60px, 744px);
             margin-bottom: vw(80px, 744px);
         }
         
@@ -148,6 +146,19 @@
                 padding-top: 0px;
                 padding-bottom: 0px;
             }
+        }
+    }
+
+    &-franchizeStepsDots {
+        
+        margin-bottom: vw(60px, 430px);
+
+        @media screen and (min-width: 526px) {
+            margin-bottom: vw(60px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            display: none;
         }
     }
     
