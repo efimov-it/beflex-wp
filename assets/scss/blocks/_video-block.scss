@@ -44,12 +44,14 @@
             
             @media screen and (min-width: 921px) {
                 width: vw(764px);
+                min-width: vw(764px);
                 height: vw(432px);
                 border-radius: vw(12px);
             }
             
             @media screen and (min-width: 1440px) {
                 width: 764px;
+                min-width: 764px;
                 height: 432px;
                 border-radius: 12px;
             }
