@@ -15,7 +15,7 @@
                 ЗАКАЗАТЬ ЗВОНОК
             </h2>
             <p class="bf-modal_text">
-                Оставьте свой номер телефона, и мы свяжемся с вами
+                оставьте свой номер телефона, и мы свяжемся с вами
                 в&nbsp;ближайшее время
             </p>
 
@@ -61,11 +61,55 @@
         <div class="bf-modal bf-modal__test">
             <img src="<?=$tmp_dir?>/assets/imgs/cross_modal.svg" class="bf-modal_close" width="50" height="50" alt="Закрыть" title="Закрыть">
 
+            
+            <?
+
+            $notes = [];
+
+            if($id = get_the_ID()) {
+                if (get_post_type( $id ) === 'studios') {
+                    if (get_field('has_free_trial', $id) === 'true') {
+                        $notes[] = 'бесплатная тренировка только для новых гостей студии';
+                    }
+                }
+                else {
+                    $notes[] = 'бесплатная тренировка только для новых гостей студии';
+                    
+                    $query = new WP_Query([
+                        'post_type'      => 'studios',
+                        'posts_per_page' => -1,
+                        'meta_query'     => [
+                            [
+                                'key'   => 'has_free_trial',
+                                'value' => 'false',
+                                'compare' => '='
+                            ]
+                        ]
+                    ]);
+
+                    $posts = $query -> posts;
+
+                    if (count($posts) > 0) {
+                        $studios_list = [];
+                        foreach ($posts as $post) {
+                            $studios_list[] = $post -> post_title . ' (' . get_field('short_address', $post -> ID) . ')';
+                        }
+
+                        $studios_list = implode(', ', $studios_list);
+
+                        $notes[] = 'акция не распространяется на студи' . (count($posts) > 1 ? 'и: ' : 'ю ') . $studios_list;
+                    }
+                }
+            }
+            ?>
+
             <h2 class="bf-modal_title">
-                записаться на&nbsp;пробное занятие*
+                записаться на&nbsp;пробное занятие<?=count($notes) > 0 ? '*' : ''?>
             </h2>
             <p class="bf-modal_text">
-                *бесплатная тренировка только для новых гостей студии
+            <? foreach ($notes as $i => $note) { ?>
+                <?=str_repeat('*', $i + 1) . $note . '<br>'?>
+            <? } ?>
             </p>
 
             <form action="" id="modal-test" method="post" class="bf-modal_form">

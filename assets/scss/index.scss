@@ -138,17 +138,159 @@ body {
     }
 
     &__post {
-
+        // margin: 0px auto;
+    
+        // width: vw(388px, 430px);
+    
         @media screen and (min-width: 526px) {
-            
+            // width: vw(702px, 744px);
         }
         
         @media screen and (min-width: 921px) {
-            
+            // width: vw(1312px);
         }
         
         @media screen and (min-width: 1440px) {
+            // width: 1312px;
+        }
+    
+        & p {
+            font-family: 'Roboto Flex', sans-serif;
+            color: #101010;
+            font-weight: 500;
+            margin: 0px auto;
             
+            width: vw(388px, 430px);
+            font-size: vw(20px, 430px);
+            line-height: vw(28px, 430px);
+            margin-bottom: vw(24px, 430px);
+    
+            @media screen and (min-width: 526px) {
+                width: vw(702px, 744px);
+                font-size: vw(20px, 744px);
+                line-height: vw(28px, 744px);
+                margin-bottom: vw(24px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                max-width: 80%;
+                width: vw(1312px);
+                font-size: vw(20px);
+                line-height: vw(28px);
+                margin-bottom: vw(24px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                width: 1312px;
+                font-size: 20px;
+                line-height: 28px;
+                margin-bottom: 24px;
+            }
+        }
+
+        & ul, & ol {
+            font-family: 'Roboto Flex', sans-serif;
+            margin: 0px auto;
+            
+            width: vw(388px, 430px);
+            margin-bottom: vw(24px, 430px);
+    
+            @media screen and (min-width: 526px) {
+                width: vw(702px, 744px);
+                margin-bottom: vw(24px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                max-width: 80%;
+                width: vw(1312px);
+                margin-bottom: vw(24px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                width: 1312px;
+                margin-bottom: 24px;
+            }
+
+            & li {
+                font-family: 'Roboto Flex', sans-serif;
+                color: #101010;
+                font-weight: 500;
+
+                font-size: vw(20px, 430px);
+                line-height: vw(28px, 430px);
+                margin-bottom: vw(8px, 430px);
+        
+                @media screen and (min-width: 526px) {
+                    font-size: vw(20px, 744px);
+                    line-height: vw(28px, 744px);
+                    margin-bottom: vw(8px, 744px);
+                }
+                
+                @media screen and (min-width: 921px) {
+                    font-size: vw(20px);
+                    line-height: vw(28px);
+                    margin-bottom: vw(8px);
+                }
+                
+                @media screen and (min-width: 1440px) {
+                    font-size: 20px;
+                    line-height: 28px;
+                    margin-bottom: 8px;
+                }
+
+                &::marker {
+                    color: #E056BA;
+                }
+            }
+        }
+
+
+        & a {
+            color: #E056BA;
+        }
+    
+        & img {
+            vertical-align: bottom;
+    
+            border-radius: vw(16px, 430px);
+    
+            @media screen and (min-width: 526px) {
+                border-radius: vw(16px);
+                border-radius: vw(16px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                border-radius: vw(16px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                border-radius: 16px;
+            }
+        }
+
+        & .wp-block-image {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+    
+            margin-bottom: vw(16px, 430px);
+            padding: vw(20px, 430px);
+
+            @media screen and (min-width: 526px) {
+                margin-bottom: vw(16px, 744px);
+                padding: vw(20px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                margin-bottom: vw(16px);
+                padding: vw(20px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                margin-bottom: 16px;
+                padding: 20px;
+            }
         }
     }
     
@@ -510,68 +652,7 @@ body {
 }
 
 .bf-post {
-    margin: 0px auto;
 
-    width: vw(388px, 430px);
-
-    @media screen and (min-width: 526px) {
-        width: vw(702px, 744px);
-    }
-    
-    @media screen and (min-width: 921px) {
-        width: vw(1312px);
-    }
-    
-    @media screen and (min-width: 1440px) {
-        width: 1312px;
-    }
-
-    & * {
-        font-family: 'Roboto Flex', sans-serif;
-        color: #101010;
-        font-weight: 500;
-        
-        font-size: vw(20px, 430px);
-        line-height: vw(28px, 430px);
-        margin-bottom: vw(24px, 430px);
-
-        @media screen and (min-width: 526px) {
-            font-size: vw(20px, 744px);
-            line-height: vw(28px, 744px);
-            margin-bottom: vw(24px, 744px);
-        }
-        
-        @media screen and (min-width: 921px) {
-            max-width: 80%;
-            font-size: vw(20px);
-            line-height: vw(28px);
-            margin-bottom: vw(24px);
-        }
-        
-        @media screen and (min-width: 1440px) {
-            font-size: 20px;
-            line-height: 28px;
-            margin-bottom: 24px;
-        }
-    }
-
-    & img {
-        vertical-align: bottom;
-
-        border-radius: vw(16px, 430px);
-
-        @media screen and (min-width: 526px) {            border-radius: vw(16px);
-            border-radius: vw(16px, 744px);
-        }
-        
-        @media screen and (min-width: 921px) {
-            border-radius: vw(16px);
-        }
-        
-        @media screen and (min-width: 1440px) {
-            border-radius: 16px;
-        }
-    }
 }
 
 .bf-textTemplateFlower {

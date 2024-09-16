@@ -138,11 +138,33 @@
 
             <?php
                 }
-            ?>
 
-            <ul class="bf-contactsBlock_socials">
+            foreach ($studios as $i => $studio) :
+            ?>
+            <ul class="bf-contactsBlock_socials" data-studio="<?=$i?>"<?=$i > 0 ? ' style="display:none;"' : ''?>>
                 <?php
                 foreach ($socials as $social) {
+                $link = get_field('link', $social -> ID);
+                $type = get_field('type', $social -> ID);
+                
+                $show = false;
+
+                $studio_socials = get_field('socials', $studio -> ID);
+                $show_default = $studio_socials != null ? $studio_socials['show_default'] : false;
+                $show_default = $show_default === 'true' ? true : false;
+
+                $key = get_field('key', $social -> ID);
+                
+                if (isset($studio_socials[$key]) && $studio_socials[$key] !== '') {
+                    $show = $studio_socials[$key];
+                }
+                elseif ($link && $show_default) {
+                    $show = $link;
+                }
+
+                if ($show) :
+                    $show = ($type === 'email' ? 'mailto:' : '') . $show;
+                    $link_title = $type === 'email' ? 'Написать' : ($type === 'custom' ? 'Перейти' : 'Перейти в соц. сеть');
                 ?>
                 <li class="bf-contactsSocialLink">
                     <?php
@@ -157,12 +179,14 @@
                         <?php
                         }
                     ?>
-                    <a href="<?=get_field('link', $social -> ID)?>" class="bf-contactsSocialLink_link" target="_blank" title="Перейти в соц сеть"></a>
+                    <a href="<?=$show?>" class="bf-contactsSocialLink_link" target="_blank" title="<?=$link_title?>"></a>
                 </li>
                 <?php
+                endif;
                 }
                 ?>
             </ul>
+            <? endforeach; ?>
         </div>
     </div>
 </section>

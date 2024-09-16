@@ -36,8 +36,11 @@ if (!$preview) $preview = $tmp_dir . "/assets/imgs/no_photo.jpg";
                 </h1>
                 <button class="bf-button bf-studioBanner_button" type="button">
                     <span class="bf-button_text">
-                        получить бесплатную<br>
-                        тренировку
+                        <?
+                            $text = get_field('banner_trial_text', $id);
+                            echo $text ? $text : 'получить бесплатную<br>тренировку';
+                            unset($text);
+                        ?>
                     </span>
                 </button>
             </div>

@@ -7,9 +7,9 @@ get_header();
         <?php
             echo get_lazy_block('simple-title');
         ?>
-        <div class="bf-post">
+        <!-- <div class="bf-post"> -->
             <?=the_content()?>
-        </div>
+        <!-- </div> -->
         <?php
 
             $related_posts = get_lazy_block('news');

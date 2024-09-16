@@ -66,6 +66,7 @@
         }
 
         &_preview {
+            object-fit: cover;
             width: vw(260px, 430px);
             height: vw(260px, 430px);
             border-radius: vw(28px, 430px);

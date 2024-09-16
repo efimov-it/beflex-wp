@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             mapController.addChild(marker);
 
-            tabs.forEach(tab => {
+            tabs.forEach((tab, i) => {
                 tab.onclick = () => {
                     const phone = tab.dataset.phone;
                     const address = tab.dataset.address;
@@ -249,6 +249,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         markerElement
                     );
                     mapController.addChild(marker);
+
+                    document.querySelectorAll('.bf-contactsBlock_socials').forEach((socialsLinks, j) => {
+                        if (i !== j) socialsLinks.style.display = 'none';
+                        else socialsLinks.style.display = null;
+                    });
                 }
             });
         }
