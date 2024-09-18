@@ -18,6 +18,9 @@ add_action('manage_messages_posts_custom_column', function ($column, $post_id) {
     $type = get_field('type', $post_id);
     $phone = get_field('phone', $post_id);
     $email = get_field('email', $post_id);
+    $studio = get_field('studio', $post_id);
+
+    if ($studio > 0) $studio = get_post( $studio );
 
     if ($column == 'message') {
     ?>
@@ -77,6 +80,11 @@ add_action('manage_messages_posts_custom_column', function ($column, $post_id) {
             <div class="bfadm-message_info">
                 <h3 class="bfadm-messageName"><?=$name . ($surname ? ' ' . $surname : '')?></h3>
                 <p class="bfadm-messageText"><?=$type?> - <a href="<?=$page?>" target="_blank">страница</a></p>
+                <? if ($studio): ?>
+                <p class="bfadm-messageText"><a href="<?=get_permalink( $studio )?>" target="_blank"><?=$studio -> post_title . ' (' . get_field('short_address', $studio -> ID) . ')'?></a></p>
+                <? else : ?>
+                <p class="bfadm-messageText">- Студия не выбрана -</p>
+                <? endif; ?>
             </div>
         </div>
     <?php
@@ -118,9 +126,19 @@ function feedback_form () {
     $email = sanitize_email( $_POST['email'] );
     $url = esc_url( $_POST['url'] );
     $message_type = sanitize_text_field( $_POST['message_type'] );
+    $studio_id = $_POST['studio_id'];
+    $studio_id = $studio_id > 0 ? intval($studio_id) : null;
 
     if ( empty( $name ) || empty( $phone ) || empty( $url ) || empty( $message_type ) ) {
         wp_send_json_error( 'error' );
+    }
+
+    if ($studio_id) {
+        $studio = get_post($studio_id);
+
+        if (!$studio || $studio->post_type !== 'studios') {
+            $studio_id = null;
+        }
     }
 
     $post_data = array(
@@ -138,31 +156,47 @@ function feedback_form () {
         update_post_meta( $post_id, 'page', $url );
         update_post_meta( $post_id, 'type', $message_type );
 
+        if ($studio_id) update_post_meta( $post_id, 'studio', $studio_id );
+
         $data = [
             'name'  => $name . ($surname ? ' ' . $surname : ''),
             'phone' => $phone,
             'email' => $email,
-            'textarea' => $message_type . ".Страница: " . $url
+            'textarea' => $message_type . ". Страница: " . $url
         ];
 
-        if (get_theme_mod('email')) {
+        if ($studio_id) $data['textarea'] .= " | " . $studio -> post_title . ' (' . get_field('short_address', $studio_id) . ')';
+
+
+        $send_to = get_theme_mod('email');
+
+        if ($studio_id) {
+            $studio_email = get_field('email', $studio_id);
+
+            if ($studio_email) $send_to = $studio_email;
+
+            unset($studio_email);
+        }
+
+        if ($send_to) {
             require_once __DIR__."/../email/feedback.php";
 
             $email_template = get_feedback_mail_template([
-                'name' => $name,
+                'name'    => $name,
                 'surname' => $surname,
-                'phone' => $phone,
-                'email' => $email,
-                'page' => $url,
-                'type' => $message_type
+                'phone'   => $phone,
+                'email'   => $email,
+                'page'    => $url,
+                'type'    => $message_type,
+                'studio'  => $studio_id ? $studio -> post_title . ' (' . get_field('short_address', $studio_id) . ')' : ''
             ]);
 
-            wp_mail( get_theme_mod('email'), 'Новая заявка на сайте BeFlex', $email_template, [
+            wp_mail( $send_to, 'Новая заявка на сайте BeFlex', $email_template, [
                 'From: BeFlex <no-reply@beflex.ru>',
                 'content-type: text/html'
             ] );
 
-            wp_mail( 'mail@efimov-it.info', 'Новая заявка на сайте BeFlex', $email_template, [
+            wp_mail( 'apple-i-shop@yandex.ru', 'Новая заявка на сайте BeFlex', $email_template, [
                 'From: BeFlex <no-reply@beflex.ru>',
                 'content-type: text/html'
             ] );

@@ -131,7 +131,7 @@ function get_feedback_mail_template ($attributes) {
                                             color: #101010;
                                             margin-bottom: 12px;
                                             margin-top: 7px;
-                                        "><?=phone_format($attributes['phone'])?></p>
+                                        "><?=phone_format($attributes['phone'])?></a>
                                         <a href="mailto:<?=$attributes['email']?>" target="_blank" style="
                                             display: block;
                                             text-decoration: none;
@@ -141,7 +141,17 @@ function get_feedback_mail_template ($attributes) {
                                             line-height: 120%;
                                             color: #101010;
                                             margin-bottom: 7px;
-                                        "><?=$attributes['email']?></p>
+                                        "><?=$attributes['email']?></a>
+                                        <span style="
+                                            display: block;
+                                            text-decoration: none;
+                                            margin: 0px;
+                                            font-family: sans-serif;
+                                            font-size: 16px;
+                                            line-height: 120%;
+                                            color: #101010;
+                                            margin-bottom: 7px;
+                                        "><?=$attributes['studio']?></span>
                                     </td>
                                 </tr>
                                 <tr>
