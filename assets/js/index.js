@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     backMenuBtn.onclick = resetMobileMenu;
 
+
     // Mobile main menu code
 
     const firstLevelMenu = document.querySelector(".bf-headerNavList");
@@ -781,7 +782,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const modalWrapper = modal.parentNode;
 
             if (modal.dataset.redirect) {
-                location.href = modal.dataset.redirect;
+                const redirectUrl = modal.dataset.redirect;
+
+                if (new URL(redirectUrl).hostname === location.hostname) {
+                    location.href = modal.dataset.redirect;
+                }
+                else {
+                    window.open(redirectUrl, '_blank');
+                }
+
                 return false;
             }
 
@@ -893,6 +902,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showPromoModal();
 
+    const tgActionButton = document.querySelector('.bf-actionButton_point__tg');
+    if (tgActionButton) {
+        tgActionButton.onclick = (e) => {
+            e.preventDefault();
+            showModal('.bf-modal__telegram');
+        }
+    }
+    const waActionButton = document.querySelector('.bf-actionButton_point__wa');
+    if (waActionButton) {
+        waActionButton.onclick = (e) => {
+            e.preventDefault();
+            showModal('.bf-modal__whatsapp');
+        }
+    }
+
     const courceModalButton = document.querySelector('a[href="#cource-modal"]');
     if (courceModalButton) {
         courceModalButton.onclick = (e) => {
@@ -943,7 +967,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
     );
 
-    const feedback = async (name, surname = "", phone, email = "", type) => {
+    const feedback = async (name, surname = "", phone, email = "", type, studio = null) => {
         const formData = new FormData();
         formData.append('action', 'feedback_form');
         formData.append('name', name);
@@ -952,6 +976,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.append('email', email);
         formData.append('url', window.location.href);
         formData.append('message_type', type);
+        formData.append('studio_id', studio);
 
         const request = await fetch('/wp-admin/admin-ajax.php', {
             method: 'POST',
@@ -984,8 +1009,9 @@ document.addEventListener("DOMContentLoaded", () => {
             e.target.name.value,
             e.target.surname.value,
             e.target.phone.value,
-            e.target.email.value,
-            'Обратный звонок'
+            null,
+            'Обратный звонок',
+            e.target.studio.value,
         );
 
         feedbackDone(currentModal, result);
@@ -998,8 +1024,9 @@ document.addEventListener("DOMContentLoaded", () => {
             e.target.name.value,
             e.target.surname.value,
             e.target.phone.value,
-            e.target.email.value,
-            'Пробное занятие'
+            null,
+            'Пробное занятие',
+            e.target.studio.value
         );
 
         feedbackDone(currentModal, result);
@@ -1012,8 +1039,9 @@ document.addEventListener("DOMContentLoaded", () => {
             e.target.name.value,
             e.target.surname.value,
             e.target.phone.value,
-            e.target.email.value,
-            'Запись на занятие'
+            null,
+            'Запись на занятие',
+            e.target.studio.value
         );
 
         feedbackDone(currentModal, result);
@@ -1057,7 +1085,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         '',
                         e.target.phone.value,
                         '',
-                        feedbackForm.dataset.type
+                        feedbackForm.dataset.type,
+                        e.target.studio ? e.target.studio.value : null
                     );
             
                     feedbackDone(currentModal, result);
@@ -1148,6 +1177,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 };
             }
     );
+
+
+    // Select list
+    document.querySelectorAll('.bf-input__select').forEach(select => {
+        const selectElement = select.querySelector('select');
+        const selectButton  = select.querySelector('.bf-input_value');
+        const selectOptions = select.querySelectorAll('.bf-inputSelectItem');
+
+        selectButton.onclick = () => {
+            select.classList.toggle('bf-input__selected');
+        }
+
+        document.addEventListener('click', function(event) {
+            if (!selectButton.contains(event.target)) {
+                select.classList.remove('bf-input__selected');
+            }
+        });
+
+        selectOptions.forEach(option => {
+            option.onclick = () => {
+                select.classList.remove('bf-input__selected');
+                selectElement.value = option.dataset.id;
+                selectButton.querySelector('span').textContent = option.textContent;
+            }
+        });
+    });
 });
 
 var yaMapStyle = {

@@ -1,5 +1,15 @@
 <?php
     $tmp_dir = get_template_directory_uri();
+
+    $studiosSelectList = get_posts([
+        'numberposts' => -1,
+        'orderby' => 'post_title',
+        'order' => 'ASC',
+        'post_type' => 'studios',
+        'post_status' => 'publish'
+    ]);
+
+    $current_id = get_the_ID();
 ?>
 
 <div class="bf-modals" style="display: none;">
@@ -34,10 +44,39 @@
                     <input class="bf-input_value" type="tel" name="phone" placeholder=" " required >
                     <p class="bf-input_placeholder">Телефон*</p>
                 </label>
-                
-                <label class="bf-input bf-modalFormInput">
-                    <input class="bf-input_value" type="email" name="email" placeholder=" " >
-                    <p class="bf-input_placeholder">Эл. почта</p>
+
+                <label class="bf-input bf-input__select bf-modalFormInput">
+                    <select class="bf-inputSelect" name="studio" placeholder=" " >
+                        <?php
+                        foreach ($studiosSelectList as $i => $studio) {
+                        $selectedText = $studio -> ID === $current_id ? $studio -> post_title . ' / ' . get_field('short_address', $studio -> ID) : $selectedText;
+                        ?>
+                        <option value="<?=$studio -> ID?>"<?=$studio -> ID === $current_id ? " selected" : ""?>>
+                            <?=$studio -> post_title . ' / ' . get_field('short_address', $studio -> ID)?>
+                        </option>
+                        <?php
+                        }
+                        ?>
+                    </select>
+                    <button type="button" class="bf-input_value">
+                        <span>
+                            <?=$selectedText ? $selectedText : $studiosSelectList[0] -> post_title . ' / ' . get_field('short_address', $studiosSelectList[0] -> ID)?>
+                        </span>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" fill="none" viewBox="0 0 13 11">
+                            <path stroke="#000" stroke-width="2" d="m11.5 1.25-5 7.5-5-7.5"/>
+                        </svg>
+                    </button>
+                    <div class="bf-inputSelectList">
+                        <?php
+                        foreach ($studiosSelectList as $i => $studio) { ?>
+                        <button type="button" class="bf-inputSelectItem" data-id="<?=$studio -> ID?>">
+                            <?=$studio -> post_title . ' / ' . get_field('short_address', $studio -> ID)?>
+                        </button>
+                        <?php
+                        }
+                        ?>
+                    </div>
                 </label>
 
                 <label class="bf-checkBox bf-modalFormCheckBox">
@@ -78,6 +117,7 @@
                     $query = new WP_Query([
                         'post_type'      => 'studios',
                         'posts_per_page' => -1,
+                        'post_status'    => 'publish',
                         'meta_query'     => [
                             [
                                 'key'   => 'has_free_trial',
@@ -128,9 +168,36 @@
                     <p class="bf-input_placeholder">Телефон*</p>
                 </label>
                 
-                <label class="bf-input bf-modalFormInput">
-                    <input class="bf-input_value" type="email" name="email" placeholder=" " >
-                    <p class="bf-input_placeholder">Эл. почта</p>
+                <label class="bf-input bf-input__select bf-modalFormInput">
+                    <select class="bf-inputSelect" name="studio" placeholder=" " >
+                        <?php
+                        foreach ($studiosSelectList as $i => $studio) { ?>
+                        <option value="<?=$studio -> ID?>"<?=$studio -> ID === $current_id ? " selected" : ""?>>
+                            <?=$studio -> post_title . ' / ' . get_field('short_address', $studio -> ID)?>
+                        </option>
+                        <?php
+                        }
+                        ?>
+                    </select>
+                    <button type="button" class="bf-input_value">
+                        <span>
+                            <?=$selectedText ? $selectedText : $studiosSelectList[0] -> post_title . ' / ' . get_field('short_address', $studiosSelectList[0] -> ID)?>
+                        </span>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" fill="none" viewBox="0 0 13 11">
+                            <path stroke="#000" stroke-width="2" d="m11.5 1.25-5 7.5-5-7.5"/>
+                        </svg>
+                    </button>
+                    <div class="bf-inputSelectList">
+                        <?php
+                        foreach ($studiosSelectList as $i => $studio) { ?>
+                        <button type="button" class="bf-inputSelectItem" data-id="<?=$studio -> ID?>">
+                            <?=$studio -> post_title . ' / ' . get_field('short_address', $studio -> ID)?>
+                        </button>
+                        <?php
+                        }
+                        ?>
+                    </div>
                 </label>
 
                 <label class="bf-checkBox bf-modalFormCheckBox">
@@ -173,10 +240,37 @@
                     <input class="bf-input_value" type="tel" name="phone" placeholder=" " required >
                     <p class="bf-input_placeholder">Телефон*</p>
                 </label>
-                
-                <label class="bf-input bf-modalFormInput">
-                    <input class="bf-input_value" type="email" name="email" placeholder=" " >
-                    <p class="bf-input_placeholder">Эл. почта</p>
+
+                <label class="bf-input bf-input__select bf-modalFormInput">
+                    <select class="bf-inputSelect" name="studio" placeholder=" " >
+                        <?php
+                        foreach ($studiosSelectList as $i => $studio) { ?>
+                        <option value="<?=$studio -> ID?>"<?=$studio -> ID === $current_id ? " selected" : ""?>>
+                            <?=$studio -> post_title . ' / ' . get_field('short_address', $studio -> ID)?>
+                        </option>
+                        <?php
+                        }
+                        ?>
+                    </select>
+                    <button type="button" class="bf-input_value">
+                        <span>
+                            <?=$selectedText ? $selectedText : $studiosSelectList[0] -> post_title . ' / ' . get_field('short_address', $studiosSelectList[0] -> ID)?>
+                        </span>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" fill="none" viewBox="0 0 13 11">
+                            <path stroke="#000" stroke-width="2" d="m11.5 1.25-5 7.5-5-7.5"/>
+                        </svg>
+                    </button>
+                    <div class="bf-inputSelectList">
+                        <?php
+                        foreach ($studiosSelectList as $i => $studio) { ?>
+                        <button type="button" class="bf-inputSelectItem" data-id="<?=$studio -> ID?>">
+                            <?=$studio -> post_title . ' / ' . get_field('short_address', $studio -> ID)?>
+                        </button>
+                        <?php
+                        }
+                        ?>
+                    </div>
                 </label>
 
                 <label class="bf-checkBox bf-modalFormCheckBox">
@@ -196,60 +290,170 @@
     </div>
 
     
-    <?php
-        $post_type = get_post_type();
-        
-        if ($post_type === 'training_type') {
-            $studios = get_posts([
-                'numberposts' => -1,
-                'orderby' => 'post_title',
-                'order' => 'ASC',
-                'post_type' => 'studios',
-                'post_status' => 'publish',
-                'meta_query' => [
-                    [
-                        'key' => 'classes',
-                        'value' => '"' . $id . '"',
-                        'compare' => 'LIKE',
-                        'type' => 'CHAR'
-                    ]
+<?php
+    $post_type = get_post_type();
+    
+    if ($post_type === 'training_type') {
+        $studios = get_posts([
+            'numberposts' => -1,
+            'orderby' => 'post_title',
+            'order' => 'ASC',
+            'post_type' => 'studios',
+            'post_status' => 'publish',
+            'meta_query' => [
+                [
+                    'key' => 'classes',
+                    'value' => '"' . $id . '"',
+                    'compare' => 'LIKE',
+                    'type' => 'CHAR'
                 ]
-            ]);
-        }
-        else {
-            $studios = get_posts([
-                'numberposts' => -1,
-                'orderby' => 'post_title',
-                'order' => 'ASC',
-                'post_type' => 'studios',
-                'post_status' => 'publish'
-            ]);
-        }
-    ?>
-    <!-- Выбрать студию -->
-    <div class="bf-modalWrapper">
-        <div class="bf-modal bf-modal__studios"<?=count($studios) === 1 ? ' data-redirect="' . get_the_permalink($studios[0] -> ID) . '#raspisanije"' : ''?>>
-            <img src="<?=$tmp_dir?>/assets/imgs/cross_modal.svg" class="bf-modal_close" width="50" height="50" alt="Закрыть" title="Закрыть">
-            
-            <h2 class="bf-modal_title">
-                Выберите свою студию
-            </h2>
+            ]
+        ]);
+    }
+    else {
+        $studios = get_posts([
+            'numberposts' => -1,
+            'orderby' => 'post_title',
+            'order' => 'ASC',
+            'post_type' => 'studios',
+            'post_status' => 'publish'
+        ]);
+    }
+?>
+<!-- Выбрать студию -->
+<div class="bf-modalWrapper">
+    <div class="bf-modal bf-modal__studios"<?=count($studios) === 1 ? ' data-redirect="' . get_the_permalink($studios[0] -> ID) . '#raspisanije"' : ''?>>
+        <img src="<?=$tmp_dir?>/assets/imgs/cross_modal.svg" class="bf-modal_close" width="50" height="50" alt="Закрыть" title="Закрыть">
+        
+        <h2 class="bf-modal_title">
+            Выберите свою студию
+        </h2>
 
-            <div class="bf-modalList">
-            <?php
-            foreach ($studios as $i => $studio) {
-            ?>
-                <div class="bf-modalList_item">
-                    <h3 class="bf-modalListItemTitle"><?=$studio -> post_title?></h3>
-                    <p class="bf-modalListItemText"><?=get_field('short_address', $studio -> ID)?></p>
-                    <a class="bf-modalListItemLink" href="<?=get_the_permalink($studio -> ID)?>#raspisanije"></a>
-                </div>
-            <?php
-            }
-            ?>
+        <div class="bf-modalList">
+        <?php
+        foreach ($studios as $i => $studio) {
+        ?>
+            <div class="bf-modalList_item">
+                <h3 class="bf-modalListItemTitle"><?=$studio -> post_title?></h3>
+                <p class="bf-modalListItemText"><?=get_field('short_address', $studio -> ID)?></p>
+                <a class="bf-modalListItemLink" href="<?=get_the_permalink($studio -> ID)?>#raspisanije"></a>
             </div>
+        <?php
+        }
+        ?>
         </div>
     </div>
+</div>
+
+    
+<?php
+    $whatsapp = get_theme_mod('wa_number');
+    $telegram = get_theme_mod('tg_link');
+
+    $unic_tg = [];
+    $unic_wa = [];
+
+    if (strpos($_SERVER['REQUEST_URI'], '/studiya/') === 0) {
+        $whatsapp_tmp = get_field('whatsapp', get_the_ID());
+        $telegram_tmp = get_field('telegram', get_the_ID());
+
+        if ($whatsapp_tmp) $whatsapp = $whatsapp_tmp;
+        if ($telegram_tmp) $telegram = $telegram_tmp;
+
+        $studios = [1];
+    }
+    else {
+        $studios_tmp = get_posts([
+            'numberposts' => -1,
+            'orderby' => 'post_title',
+            'order' => 'ASC',
+            'post_type' => 'studios',
+            'post_status' => 'publish'
+        ]);
+
+        $studios = [];
+
+        foreach ($studios_tmp as $i => $studio) {
+            $id_tmp = $studio -> ID;
+
+            $tmp_wa = get_field('whatsapp', $id_tmp);
+            $tmp_tg = get_field('telegram', $id_tmp);
+
+            if ($tmp_wa)
+                if (!in_array($tmp_wa, $unic_wa)) $unic_wa[] = $tmp_wa;
+
+            if ($tmp_tg)
+                if (!in_array($tmp_tg, $unic_tg)) $unic_tg[] = $tmp_tg;
+
+            $studios[] = [
+                'title'   => $studio -> post_title,
+                'address' => get_field('short_address', $id_tmp),
+                'wa'      => $tmp_wa ? $tmp_wa : $whatsapp,
+                'tg'      => $tmp_tg ? $tmp_tg : $telegram
+            ];
+        }
+    }
+?>
+<!-- Выбрать студию для связи в WhatsApp -->
+<div class="bf-modalWrapper">
+    <div class="bf-modal bf-modal__whatsapp"<?=count($unic_wa) === 0 ? ' data-redirect="https://wa.me/' . $whatsapp . '"' : ''?>>
+    <?php
+    if (count($studios) > 1 && count($unic_wa) > 0) {
+    ?>
+        <img src="<?=$tmp_dir?>/assets/imgs/cross_modal.svg" class="bf-modal_close" width="50" height="50" alt="Закрыть" title="Закрыть">
+        
+        <h2 class="bf-modal_title">
+            Выберите студию для связи в WhatsApp
+        </h2>
+
+        <div class="bf-modalList">
+        <?php
+        foreach ($studios as $i => $studio) {
+        ?>
+            <div class="bf-modalList_item">
+                <h3 class="bf-modalListItemTitle"><?=$studio['title']?></h3>
+                <p class="bf-modalListItemText"><?=$studio['address']?></p>
+                <a class="bf-modalListItemLink" href="https://wa.me/<?=$studio['wa']?>" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+        <?php
+        }
+        ?>
+        </div>
+    <?
+    }
+    ?>
+    </div>
+</div>
+<!-- Выбрать студию для связи в Telegram -->
+<div class="bf-modalWrapper">
+    <div class="bf-modal bf-modal__telegram"<?=count($unic_tg) === 0 ? ' data-redirect="https://t.me/' . $telegram . '"' : ''?>>
+    <?php
+    if (count($studios) > 1 && count($unic_tg) > 0) {
+    ?>
+        <img src="<?=$tmp_dir?>/assets/imgs/cross_modal.svg" class="bf-modal_close" width="50" height="50" alt="Закрыть" title="Закрыть">
+        
+        <h2 class="bf-modal_title">
+            Выберите студию для связи в Telegram
+        </h2>
+
+        <div class="bf-modalList">
+        <?php
+        foreach ($studios as $i => $studio) {
+        ?>
+            <div class="bf-modalList_item">
+                <h3 class="bf-modalListItemTitle"><?=$studio['title']?></h3>
+                <p class="bf-modalListItemText"><?=$studio['address']?></p>
+                <a class="bf-modalListItemLink" href="https://t.me/<?=$studio['tg']?>" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+        <?php
+        }
+        ?>
+        </div>
+    <?
+    }
+    ?>
+    </div>
+</div>
 
     <!-- Юридическая информация -->
     <div class="bf-modalWrapper">

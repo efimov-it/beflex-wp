@@ -15,7 +15,7 @@
     <?php
     if (get_theme_mod('tg_link')) {
     ?>
-    <div class="bf-actionButton_point">
+    <div class="bf-actionButton_point bf-actionButton_point__tg">
         <a href="https://t.me/<?=get_theme_mod('tg_link')?>" target="_blank"  rel="nonoopener noreferrer" title="Написать в Telegram" class="bf-actionButton_button" type="button">
             <img class="bf-actionButtonIcon" src="<?=$tmp_dir?>/assets/imgs/action_tg.svg" width="38" height="38" alt="Закрыть">
         </a>
@@ -27,7 +27,7 @@
     <?php
     if (get_theme_mod('wa_number')) {
     ?>
-    <div class="bf-actionButton_point">
+    <div class="bf-actionButton_point bf-actionButton_point__wa">
         <a href="https://wa.me/<?=get_theme_mod('wa_number')?>" target="_blank"  rel="nonoopener noreferrer" title="Написать в WhatsApp" class="bf-actionButton_button" type="button">
             <img class="bf-actionButtonIcon" src="<?=$tmp_dir?>/assets/imgs/action_wa.svg" width="38" height="38" alt="Закрыть">
         </a>

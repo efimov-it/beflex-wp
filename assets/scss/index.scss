@@ -687,6 +687,8 @@ body {
 }
 
 .bf-input {
+    z-index: 1;
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -792,6 +794,295 @@ body {
         @media screen and (min-width: 1440px) {
             font-size: 14px;
         }
+    }
+
+    
+    &__select {
+        flex-direction: column;
+
+        @media screen and (min-width: 526px) {
+            
+        }
+        
+        @media screen and (min-width: 921px) {
+            
+        }
+        
+        @media screen and (min-width: 1440px) {
+            
+        }
+    }
+
+    &Select {
+        display: none;
+
+        @media screen and (min-width: 526px) {
+            
+        }
+        
+        @media screen and (min-width: 921px) {
+        }
+        
+        @media screen and (min-width: 1440px) {
+            
+        }
+    }
+
+    &__select > &_value {
+        transition: background 0.3s ease-in-out;
+        justify-content: space-between;
+        z-index: 1;
+        cursor: pointer;
+
+        @media screen and (min-width: 526px) {
+            
+        }
+        
+        @media screen and (min-width: 921px) {
+            
+        }
+        
+        @media screen and (min-width: 1440px) {
+            
+        }
+
+        & span {
+            font-weight: 600;
+            line-height: 100%;
+            text-align: left;
+
+            font-size: vw(18px, 430px);
+
+            @media screen and (min-width: 526px) {
+                font-size: vw(18px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                font-size: vw(18px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                font-size: 18px;
+            }
+        }
+
+        & svg {
+            transition: transform 0.3s ease-in-out;
+            
+            width: vw(8px, 430px);
+            height: vw(10px, 430px);
+
+            @media screen and (min-width: 526px) {
+                width: vw(8px, 744px);
+                height: vw(10px, 744px);
+            }
+            
+            @media screen and (min-width: 921px) {
+                width: vw(8px);
+                height: vw(10px);
+            }
+            
+            @media screen and (min-width: 1440px) {
+                width: 8px;
+                height: 10px;
+            }
+        }
+    }
+
+    &__selected > &_value {
+        background: #ABABAB;
+
+        @media screen and (min-width: 526px) {
+            
+        }
+        
+        @media screen and (min-width: 921px) {
+            
+        }
+        
+        @media screen and (min-width: 1440px) {
+            
+        }
+
+        & span {
+
+            @media screen and (min-width: 526px) {
+                
+            }
+            
+            @media screen and (min-width: 921px) {
+                
+            }
+            
+            @media screen and (min-width: 1440px) {
+                
+            }
+        }
+
+        & svg {
+            transform: rotate(180deg);
+
+            @media screen and (min-width: 526px) {
+                
+            }
+            
+            @media screen and (min-width: 921px) {
+
+            }
+            
+            @media screen and (min-width: 1440px) {
+
+            }
+        }
+    }
+
+    &SelectList {
+        z-index: 0;
+        position: absolute;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        background: #F6F6F6;
+        width: 100%;
+        max-height: 0px;
+        overflow-y: auto;
+        transition: max-height 0.3s ease-in-out,
+                    padding 0.3s ease-in-out;
+        
+        padding: 0px vw(20px, 430px);
+        border-radius: vw(10px, 430px);
+        top: vw(20px, 430px);
+        gap: vw(20px, 430px);
+
+        @media screen and (min-width: 526px) {
+            padding: 0px vw(20px, 744px);
+            border-radius: vw(10px, 744px);
+            top: vw(20px, 744px);
+            gap: vw(20px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            padding: 0px vw(20px);
+            border-radius: vw(10px);
+            top: vw(20px);
+            gap: vw(20px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            padding: 0px 20px;
+            border-radius: 10px;
+            top: 20px;
+            gap: 20px;
+        }
+
+        
+        &::-webkit-scrollbar {
+
+            width: vw(8px, 430px);
+            height: vw(8px, 430px);
+
+            @media screen and (min-width: 526px) {
+                width: vw(8px, 744px);
+                height: vw(8px, 744px);
+            }
+
+            @media screen and (min-width: 921px) {
+                width: vw(8px);
+                height: vw(8px);
+            }
+
+            @media screen and (min-width: 1440px) {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background: #E056BA;
+            border: solid #E056BA;
+            
+            border-radius: vw(40px, 430px);
+            border-width: vw(36px, 430px) vw(8px, 430px) vw(36px, 430px) vw(8px, 430px);
+
+            @media screen and (min-width: 526px) {
+                border-radius: vw(40px, 744px);
+                border-width: vw(36px, 744px) vw(8px, 744px) vw(36px, 744px) vw(8px, 744px);
+            }
+
+            @media screen and (min-width: 921px) {
+                border-radius: vw(40px);
+                border-width: vw(36px) vw(8px) vw(36px) vw(8px);
+            }
+
+            @media screen and (min-width: 1440px) {
+                border-radius: 40px;
+                border-width: 36px 8px 36px 8px;
+            }
+        }
+    }
+
+    &__selected > &SelectList {
+        
+        max-height: vw(200px, 430px);
+        padding: vw(54px, 430px) vw(20px, 430px) vw(20px, 430px);
+
+        @media screen and (min-width: 526px) {
+            max-height: vw(200px, 744px);
+            padding: vw(54px, 744px) vw(20px, 744px) vw(20px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            max-height: vw(200px);
+            padding: vw(54px) vw(20px) vw(20px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            max-height: 200px;
+            padding: 54px 20px 20px;
+        }
+    }
+
+    &SelectItem {
+        background: none;
+        border: none;
+        font-weight: 600;
+        line-height: 140%;
+        color: #242424;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+
+        transition: color 0.3s ease-in-out;
+        
+        font-size: vw(18px, 430px);
+
+        @media screen and (min-width: 526px) {
+            font-size: vw(18px, 744px);
+        }
+        
+        @media screen and (min-width: 921px) {
+            font-size: vw(18px);
+        }
+        
+        @media screen and (min-width: 1440px) {
+            font-size: 18px;
+        }
+
+        &:hover {
+            color: #E056BA;
+        }
+    }
+
+    @media screen and (min-width: 526px) {
+        
+    }
+    
+    @media screen and (min-width: 921px) {
+        
+    }
+    
+    @media screen and (min-width: 1440px) {
+        
     }
 }
 

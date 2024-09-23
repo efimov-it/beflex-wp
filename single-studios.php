@@ -358,6 +358,7 @@ if (!$preview) $preview = $tmp_dir . "/assets/imgs/no_photo.jpg";
             echo get_lazy_block('feedback', [
                 'title' => 'НАЧНИ СВОЕ ПРЕОБРАЖЕНИЕ<br>УЖЕ СЕЙЧАС!',
                 'button_text' => 'Записаться на тренировку',
+                'studio' => true,
                 'type' => 'Пробное занятие'
             ], '');
 

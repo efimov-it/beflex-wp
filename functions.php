@@ -36,10 +36,10 @@ add_action('admin_init', 'allow_edit_theme_options_for_editors');
 
 function beflex_theme_scripts() {
     $css = get_template_directory_uri() . '/assets/css/index.css';
-    $css_v = fileatime(get_template_directory() . '/assets/css/index.css');
+    $css_v = filectime(get_template_directory() . '/assets/css/index.css');
 
     $js = get_template_directory_uri() . '/assets/js/index.js';
-    $js_v = fileatime(get_template_directory() . '/assets/js/index.js');
+    $js_v = filectime(get_template_directory() . '/assets/js/index.js');
 
     wp_enqueue_style( 'beflex-style', $css, [], $css_v, 'all' );
     wp_enqueue_script( 'beflex-script', $js, [], $js_v, true );
